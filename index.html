@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl" class="scroll-smooth">
 <head>
@@ -40,6 +41,7 @@
     .interactive-el { cursor: grab; user-select: none; }
     .interactive-el:active { cursor: grabbing; }
     .handle-point { cursor: nwse-resize; }
+    #editor-pitch { touch-action: none; }
   </style>
 </head>
 <body class="text-slate-100 font-sans antialiased custom-scrollbar h-screen flex overflow-hidden">
@@ -103,6 +105,9 @@
     
     <!-- ==================== WIDOK 1: MODEL GRY ==================== -->
     <div id="view-model" class="max-w-5xl mx-auto">
+      <label class="md:hidden block mb-4 text-sm">Wybierz moduł
+        <select id="mobile-module" onchange="setActiveMenu(Number(this.value)); loadPlayer(Number(this.value))" class="block w-full mt-2 p-3 rounded bg-slate-800 text-white"></select>
+      </label>
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-6">
         <div>
           <span id="pos-id" class="text-emerald-400 font-mono text-xs font-semibold tracking-widest uppercase bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded-full mb-2 inline-block"></span>
@@ -282,6 +287,11 @@
         </svg>
       </div>
 
+      <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+        <button onclick="downloadProject()" class="px-3 py-2 rounded bg-slate-700">Pobierz projekt JSON</button>
+        <label class="px-3 py-2 rounded bg-slate-700 cursor-pointer">Wczytaj projekt JSON<input type="file" accept=".json,application/json" class="hidden" onchange="importProject(this)"></label>
+        <span id="save-status" role="status" aria-live="polite" class="text-slate-400"></span>
+      </div>
       <!-- Dolny Panel Osi Czasu i Klatek (Timeline & Keyframes) -->
       <div class="mt-4 glass-card rounded-xl p-4 border border-slate-700 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
         
@@ -424,6 +434,85 @@
     let currentFrameIdx = 0;
     let isPlaying = false;
     let playTimeout = null;
+    let playRaf = null;
+    let activeModule = 0;
+    let savedAnimations = {};
+    const STORAGE_KEY = 'olimpia-tactical-project-v1';
+    let lastSavedProject = '';
+
+    function escapeXml(value) {
+      return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&apos;'}[c]));
+    }
+    function projectData() { return { version: 1, frames, currentFrameIdx, activeModule, savedAnimations }; }
+    function saveProject() {
+      if (isPlaying || !frames.length) return;
+      try {
+        const data = JSON.stringify(projectData());
+        if (data !== lastSavedProject) { localStorage.setItem(STORAGE_KEY, data); lastSavedProject = data; }
+        document.getElementById('save-status').textContent = 'Projekt zapisany w tej przeglądarce';
+      } catch (e) {
+        document.getElementById('save-status').textContent = 'Nie udało się zapisać automatycznie. Pobierz projekt JSON.';
+      }
+    }
+    function validateProject(p) {
+      const finite = n => typeof n === 'number' && Number.isFinite(n) && Math.abs(n) <= 100000;
+      const point = p => p && finite(p.x) && finite(p.y);
+      if (!p || p.version !== 1 || !Array.isArray(p.frames) || !p.frames.length || p.frames.length > 500) throw Error('Nieprawidłowy projekt');
+      p.frames.forEach(f => {
+        if (!f || !Number.isFinite(f.duration) || f.duration < .5 || f.duration > 10) throw Error('Nieprawidłowy czas klatki');
+        ['tokens','zones','lines','symbols'].forEach(k => { if (!Array.isArray(f[k]) || f[k].length > 2000) throw Error('Nieprawidłowa klatka'); });
+        [...f.tokens,...f.zones,...f.lines,...f.symbols].forEach(t => { if (!t || typeof t.id !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(t.id)) throw Error('Nieprawidłowy identyfikator'); });
+        if (new Set(f.tokens.map(t => t.id)).size !== f.tokens.length) throw Error('Powielony zawodnik');
+        f.tokens.forEach(t => { if (!point(t) || !['og','opp','ball'].includes(t.type) || typeof t.label !== 'string' || t.label.length > 100) throw Error('Nieprawidłowy zawodnik'); });
+        f.zones.forEach(z => { if (!Array.isArray(z.pts) || z.pts.length !== 4 || !z.pts.every(point)) throw Error('Nieprawidłowa strefa'); });
+        f.lines.forEach(l => { if (!['pass','run','dribble'].includes(l.type) || ![l.x1,l.y1,l.x2,l.y2].every(finite)) throw Error('Nieprawidłowa linia'); });
+        f.symbols.forEach(t => { if (!point(t) || !['text','star'].includes(t.type) || typeof t.text !== 'string' || t.text.length > 10000) throw Error('Nieprawidłowy tekst'); });
+      });
+      return p;
+    }
+    function applyProject(p) {
+      stopPlayAnimation();
+      frames = p.frames;
+      currentFrameIdx = Number.isInteger(p.currentFrameIdx) ? Math.max(0, Math.min(p.currentFrameIdx, frames.length - 1)) : 0;
+      activeModule = Number.isInteger(p.activeModule) && globalData[p.activeModule] ? p.activeModule : 0;
+      // Przywracamy wyłącznie klatki animacji, nigdy zewnętrzny kod SVG/HTML.
+      savedAnimations = {};
+      Object.entries(p.savedAnimations || {}).forEach(([key, value]) => {
+        if (globalData[Number(key)]) { try { savedAnimations[key] = validateProject({version:1, frames:value}).frames; } catch (_) {} }
+      });
+      renderTimeline(); renderBoard(); loadPlayer(activeModule); setActiveMenu(activeModule);
+    }
+    function downloadFile(text, name, type) {
+      const url = URL.createObjectURL(new Blob([text], {type}));
+      const a = document.createElement('a'); a.href = url; a.download = name; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    function downloadProject() { saveProject(); downloadFile(JSON.stringify(projectData(), null, 2), 'olimpia-projekt.json', 'application/json'); }
+    async function importProject(input) {
+      try {
+        if (!input.files[0]) return;
+        if (input.files[0].size > 10000000) throw Error('Plik jest za duży');
+        const p = validateProject(JSON.parse(await input.files[0].text()));
+        if (confirm('Wczytać projekt i zastąpić obecne klatki?')) { applyProject(p); saveProject(); }
+      } catch (e) { alert('Nie udało się wczytać projektu: ' + e.message); }
+      finally { input.value = ''; }
+    }
+    function showPreview(svg) {
+      const doc = new DOMParser().parseFromString(svg, 'image/svg+xml');
+      if (doc.querySelector('parsererror')) throw Error('Nieprawidłowy SVG');
+      const root = doc.documentElement;
+      const ids = new Map();
+      root.querySelectorAll('[id]').forEach(el => { ids.set(el.id, 'preview-' + el.id); el.id = 'preview-' + el.id; });
+      root.querySelectorAll('*').forEach(el => {
+        [...el.attributes].forEach(a => { let value = a.value; ids.forEach((next, old) => { value = value.split('url(#' + old + ')').join('url(#' + next + ')'); }); el.setAttribute(a.name, value); });
+      });
+      document.getElementById('animation-container').replaceChildren(document.importNode(root, true));
+    }
+    function refreshPreview() {
+      const original = frames;
+      try { frames = savedAnimations[activeModule] || [createInitialFrame()]; showPreview(createAnimatedSvg()); }
+      finally { frames = original; }
+    }
 
     // Struktura klatek: każda klatka przechowuje własny stan boiska i czas trwania
     let frames = [];
@@ -457,6 +546,7 @@
     }
 
     function initEditor() {
+      stopPlayAnimation();
       frames = [createInitialFrame()];
       currentFrameIdx = 0;
       renderTimeline();
@@ -476,7 +566,7 @@
       if (isPlaying) stopPlayAnimation();
       const label = prompt(teamType === 'og' ? "Podaj numer lub skrót zawodnika Olimpii (np. 6, LWB, 9):" : "Podaj oznaczenie rywala (np. SO, BO, 9):", teamType === 'og' ? "8" : "P");
       if (!label) return;
-      const newId = teamType + '_' + Date.now();
+      const newId = teamType + '_' + crypto.randomUUID();
       const offset = (frames[currentFrameIdx].tokens.length % 7) * 25;
       
       // Dodajemy gracza do bieżącej i kolejnych klatek, by zachować spójność
@@ -528,6 +618,7 @@
 
     function clearBoard() {
       if (confirm("Wyczyścić całe boisko ze wszystkich zawodników i klatek?")) {
+        stopPlayAnimation();
         frames = [{ duration: 2.0, tokens: [], lines: [], zones: [], symbols: [] }];
         currentFrameIdx = 0;
         renderTimeline();
@@ -553,7 +644,7 @@
         const cy = y1 + Math.sin(angle) * currDist + Math.cos(angle) * amp;
         const nx = x1 + Math.cos(angle) * nextDist;
         const ny = y1 + Math.sin(angle) * nextDist;
-        d += ` Q ${cx.toFixed(1)} ${cy.toFixed(1)}, ${nx.toFixed(1)} ${ny.toFixed(1)}`;
+        d += ` Q ${cx.toFixed(6)} ${cy.toFixed(6)}, ${nx.toFixed(6)} ${ny.toFixed(6)}`;
       }
       d += ` L ${x2} ${y2}`;
       return d;
@@ -565,9 +656,9 @@
       let rot = Math.PI / 2 * 3;
       let step = Math.PI / spikes;
       for (let i = 0; i < spikes; i++) {
-        pts.push(`${(cx + Math.cos(rot) * outerR).toFixed(1)},${(cy + Math.sin(rot) * outerR).toFixed(1)}`);
+        pts.push(`${(cx + Math.cos(rot) * outerR).toFixed(6)},${(cy + Math.sin(rot) * outerR).toFixed(6)}`);
         rot += step;
-        pts.push(`${(cx + Math.cos(rot) * innerR).toFixed(1)},${(cy + Math.sin(rot) * innerR).toFixed(1)}`);
+        pts.push(`${(cx + Math.cos(rot) * innerR).toFixed(6)},${(cy + Math.sin(rot) * innerR).toFixed(6)}`);
         rot += step;
       }
       return pts.join(' ');
@@ -590,6 +681,8 @@
       lSymbols.innerHTML = '';
       lTokens.innerHTML = '';
 
+      saveProject();
+
       // 1. Renderowanie 4-punktowych stref
       frame.zones.forEach(z => {
         const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -600,7 +693,7 @@
         poly.setAttribute("stroke-width", "2.5");
         poly.setAttribute("stroke-dasharray", "8,6");
         poly.setAttribute("class", "interactive-el");
-        poly.onmousedown = (e) => handleItemMouseDown(e, 'zone-body', z.id);
+        poly.onpointerdown = (e) => handleItemMouseDown(e, 'zone-body', z.id);
         g.appendChild(poly);
 
         // 4 uchwyty w narożnikach (tylko gdy nie odtwarzamy animacji)
@@ -614,7 +707,7 @@
             h.setAttribute("stroke", "#15803d");
             h.setAttribute("stroke-width", "2.5");
             h.setAttribute("class", "handle-point");
-            h.onmousedown = (e) => handleItemMouseDown(e, 'zone-corner', z.id, idx);
+            h.onpointerdown = (e) => handleItemMouseDown(e, 'zone-corner', z.id, idx);
             g.appendChild(h);
           });
         }
@@ -657,7 +750,7 @@
       frame.lines.forEach(l => {
         const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
         g.setAttribute("class", "interactive-el");
-        g.onmousedown = (e) => handleItemMouseDown(e, 'line', l.id);
+        g.onpointerdown = (e) => handleItemMouseDown(e, 'line', l.id);
 
         if (l.type === 'dribble') {
           const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -691,7 +784,7 @@
             h.setAttribute("stroke", "#ffffff");
             h.setAttribute("stroke-width", "1.5");
             h.setAttribute("class", "handle-point");
-            h.onmousedown = (e) => handleItemMouseDown(e, 'line-end', l.id, endIdx);
+            h.onpointerdown = (e) => handleItemMouseDown(e, 'line-end', l.id, endIdx);
             g.appendChild(h);
           });
         }
@@ -704,7 +797,7 @@
         const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
         g.setAttribute("class", "interactive-el");
         g.setAttribute("transform", `translate(${s.x}, ${s.y})`);
-        g.onmousedown = (e) => handleItemMouseDown(e, 'symbol', s.id);
+        g.onpointerdown = (e) => handleItemMouseDown(e, 'symbol', s.id);
 
         if (s.type === 'star') {
           const star = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
@@ -753,7 +846,7 @@
         g.setAttribute("class", "interactive-el");
         g.setAttribute("id", "board-token-" + t.id);
         g.setAttribute("transform", `translate(${t.x}, ${t.y})`);
-        g.onmousedown = (e) => handleItemMouseDown(e, 'token', t.id);
+        g.onpointerdown = (e) => handleItemMouseDown(e, 'token', t.id);
 
         if (t.type !== 'ball') {
           g.ondblclick = (e) => {
@@ -799,6 +892,7 @@
 
     // --- OBSŁUGA MYSZY NA BOISKU (PRZECIĄGANIE I RYSOWANIE) ---
     const svgPitch = document.getElementById('editor-pitch');
+    svgPitch.addEventListener('pointercancel', () => { dragState = null; document.getElementById('layer-temp').replaceChildren(); });
     let dragState = null; // { mode, id, subIdx, startX, startY }
 
     function getSvgCoords(e) {
@@ -810,7 +904,7 @@
 
     function handleItemMouseDown(e, itemType, id, subIdx = null) {
       e.stopPropagation();
-      if (isPlaying) return;
+      if (e.button !== 0 || isPlaying) return;
       const frame = frames[currentFrameIdx];
 
       // Tryb Gumki (Usuwanie)
@@ -828,12 +922,13 @@
         return;
       }
 
+      if (currentTool !== 'select') { svgPitch.onpointerdown(e); return; }
       const coords = getSvgCoords(e);
       dragState = { mode: itemType, id: id, subIdx: subIdx, lastX: coords.x, lastY: coords.y };
     }
 
-    svgPitch.onmousedown = (e) => {
-      if (isPlaying) return;
+    svgPitch.onpointerdown = (e) => {
+      if (e.button !== 0 || isPlaying) return;
       const coords = getSvgCoords(e);
       const frame = frames[currentFrameIdx];
 
@@ -853,10 +948,15 @@
       }
     };
 
-    svgPitch.onmousemove = (e) => {
+    svgPitch.onpointermove = (e) => {
       if (!dragState) return;
       const coords = getSvgCoords(e);
       const frame = frames[currentFrameIdx];
+      const initialX = dragState.lastX ?? dragState.x1;
+      const initialY = dragState.lastY ?? dragState.y1;
+      if (!dragState.moved && Math.hypot(coords.x - initialX, coords.y - initialY) < 3) return;
+      dragState.moved = true;
+      if (e.buttons || e.pointerType === 'touch') svgPitch.setPointerCapture(e.pointerId);
       const dx = coords.x - dragState.lastX;
       const dy = coords.y - dragState.lastY;
 
@@ -913,7 +1013,7 @@
       }
     };
 
-    window.onmouseup = () => {
+    window.onpointerup = () => {
       if (!dragState) return;
       if (dragState.mode === 'draw-line') {
         document.getElementById('layer-temp').innerHTML = '';
@@ -991,6 +1091,7 @@
     }
 
     function deleteFrame(idx) {
+      stopPlayAnimation();
       if (frames.length <= 1) return;
       frames.splice(idx, 1);
       if (currentFrameIdx >= frames.length) currentFrameIdx = frames.length - 1;
@@ -999,11 +1100,13 @@
     }
 
     function updateFrameDuration(val) {
-      const num = parseFloat(val);
-      if (!isNaN(num) && num >= 0.5) {
+      const num = Number(val);
+      if (Number.isFinite(num) && num >= 0.5 && num <= 10) {
+        if (isPlaying) stopPlayAnimation();
         frames[currentFrameIdx].duration = num;
+        saveProject();
         renderTimeline();
-      }
+      } else { renderTimeline(); }
     }
 
     // --- ODTWARZANIE ANIMACJI NA ŻYWO W EDYTORZE ---
@@ -1018,71 +1121,53 @@
     function stopPlayAnimation() {
       isPlaying = false;
       clearTimeout(playTimeout);
+      cancelAnimationFrame(playRaf);
+      playRaf = null;
+      dragState = null;
+      document.getElementById('layer-temp').replaceChildren();
       const btn = document.getElementById('btn-play');
       btn.innerHTML = `<i class="fa-solid fa-play mr-1.5"></i> Odtwórz Animację`;
       btn.classList.replace('bg-rose-500', 'bg-amber-500');
       renderBoard();
     }
-
     function startPlayAnimation() {
-      if (frames.length < 2) {
-        alert("Dodaj przynajmniej 2 klatki (przycisk '+ Dodaj Klatkę' na dole) i przesuń w niej zawodników, aby zobaczyć animację ruchu!");
-        return;
-      }
+      if (frames.length < 2) { alert('Dodaj przynajmniej 2 klatki i przesuń zawodników.'); return; }
+      stopPlayAnimation();
       isPlaying = true;
       const btn = document.getElementById('btn-play');
       btn.innerHTML = `<i class="fa-solid fa-stop mr-1.5"></i> Zatrzymaj`;
       btn.classList.replace('bg-amber-500', 'bg-rose-500');
-
       let stepIdx = 0;
-      currentFrameIdx = 0;
-      renderTimeline();
-      renderBoard();
-
       function runNextStep() {
         if (!isPlaying) return;
-        const currF = frames[stepIdx];
-        const nextIdx = (stepIdx + 1) % frames.length;
-        const nextF = frames[nextIdx];
-
-        // Pokazujemy linie i strefy bieżącej klatki
         currentFrameIdx = stepIdx;
-        renderTimeline();
-        renderBoard();
-
-        if (nextIdx === 0) {
-          // Krótka pauza na końcu sekwencji i zapętlenie
-          playTimeout = setTimeout(() => {
-            stepIdx = 0;
-            runNextStep();
-          }, 1000);
+        renderTimeline(); renderBoard();
+        if (stepIdx === frames.length - 1) {
+          playTimeout = setTimeout(() => { stepIdx = 0; runNextStep(); }, 1000);
           return;
         }
-
-        const dur = currF.duration;
-        // Płynna interpolacja CSS dla zawodników i piłki do następnej klatki
-        requestAnimationFrame(() => {
-          nextF.tokens.forEach(targetTok => {
-            const domEl = document.getElementById('board-token-' + targetTok.id);
-            if (domEl) {
-              domEl.style.transition = `transform ${dur}s ease-in-out`;
-              domEl.setAttribute('transform', `translate(${targetTok.x}, ${targetTok.y})`);
-            }
+        const curr = frames[stepIdx], next = frames[stepIdx + 1];
+        let start = null;
+        function tick(now) {
+          if (!isPlaying) return;
+          if (start === null) start = now;
+          const progress = Math.min(1, (now - start) / (curr.duration * 1000));
+          const eased = progress * progress * (3 - 2 * progress);
+          curr.tokens.forEach(tok => {
+            const target = next.tokens.find(t => t.id === tok.id);
+            const el = svgPitch.querySelector('#board-token-' + tok.id);
+            if (target && el) el.setAttribute('transform', `translate(${tok.x + (target.x - tok.x) * eased}, ${tok.y + (target.y - tok.y) * eased})`);
           });
-        });
-
-        playTimeout = setTimeout(() => {
-          stepIdx = nextIdx;
-          runNextStep();
-        }, dur * 1000);
+          if (progress < 1) playRaf = requestAnimationFrame(tick);
+          else { stepIdx++; runNextStep(); }
+        }
+        playRaf = requestAnimationFrame(tick);
       }
-
       runNextStep();
     }
 
     // --- KOMPILATOR I EKSPORT SAMODZIELNEJ ANIMACJI SVG ---
-    function exportAnimatedSvg() {
-      if (isPlaying) stopPlayAnimation();
+    function createAnimatedSvg() {
 
       // Obliczamy całkowity czas trwania wszystkich przejść
       let totalTime = 0;
@@ -1091,7 +1176,7 @@
       const cycleTime = totalTime > 0 ? totalTime + pauseAtEnd : 4;
 
       let cssKeyframes = '';
-      const baseTokens = frames[0].tokens;
+      const baseTokens = [...new Map(frames.flatMap(f => f.tokens).map(t => [t.id, t])).values()];
 
       if (frames.length > 1) {
         baseTokens.forEach(tok => {
@@ -1099,24 +1184,36 @@
           let elapsed = 0;
           for (let i = 0; i < frames.length; i++) {
             const fTok = frames[i].tokens.find(t => t.id === tok.id) || tok;
-            const pct = ((elapsed / cycleTime) * 100).toFixed(1);
+            const pct = ((elapsed / cycleTime) * 100).toFixed(6);
             kf += `      ${pct}% { transform: translate(${Math.round(fTok.x)}px, ${Math.round(fTok.y)}px); }\n`;
             if (i < frames.length - 1) elapsed += frames[i].duration;
           }
           const lastTok = frames[frames.length - 1].tokens.find(t => t.id === tok.id) || tok;
           kf += `      100% { transform: translate(${Math.round(lastTok.x)}px, ${Math.round(lastTok.y)}px); }\n    }\n`;
-          kf += `    .anim_${tok.id} { animation: move_${tok.id} ${cycleTime}s infinite ease-in-out; }\n`;
+          let elapsedV = 0;
+          let vis = `@keyframes visible_${tok.id} {\n`;
+          frames.forEach((f, i) => {
+            vis += `${(elapsedV / cycleTime * 100).toFixed(6)}% { opacity: ${f.tokens.some(t => t.id === tok.id) ? 1 : 0}; }\n`;
+            if (i < frames.length - 1) elapsedV += f.duration;
+          });
+          vis += `100% { opacity: ${frames[frames.length - 1].tokens.some(t => t.id === tok.id) ? 1 : 0}; }}\n`;
+          kf += vis + `.anim_${tok.id} { animation: move_${tok.id} ${cycleTime}s infinite ease-in-out, visible_${tok.id} ${cycleTime}s infinite steps(1, end); }\n`;
           cssKeyframes += kf;
         });
 
         // Keyframes dla widoczności strzałek/stref przypisanych do poszczególnych klatek
         let elapsedF = 0;
         for (let i = 0; i < frames.length; i++) {
-          const startPct = ((elapsedF / cycleTime) * 100).toFixed(1);
+          const startPct = ((elapsedF / cycleTime) * 100).toFixed(6);
           const dur = (i < frames.length - 1) ? frames[i].duration : pauseAtEnd;
-          const endPct = (((elapsedF + dur) / cycleTime) * 100).toFixed(1);
-          cssKeyframes += `    @keyframes fade_f${i} {\n      0%, ${Math.max(0, startPct - 0.1).toFixed(1)}% { opacity: 0; }\n      ${startPct}%, ${endPct}% { opacity: 1; }\n      ${Math.min(100, parseFloat(endPct) + 0.1).toFixed(1)}%, 100% { opacity: 0; }\n    }\n`;
-          cssKeyframes += `    .frame_layer_${i} { animation: fade_f${i} ${cycleTime}s infinite; }\n`;
+          const endPct = (((elapsedF + dur) / cycleTime) * 100).toFixed(6);
+          const points = [];
+          if (i > 0) points.push('0% { opacity: 0; }');
+          points.push(`${startPct}% { opacity: 1; }`);
+          if (i < frames.length - 1) points.push(`${endPct}% { opacity: 0; }`);
+          else points.push('100% { opacity: 1; }');
+          cssKeyframes += `@keyframes fade_f${i} { ${points.join(' ')} }\n`;
+          cssKeyframes += `.frame_layer_${i} { animation: fade_f${i} ${cycleTime}s infinite steps(1, end); }\n`;
           elapsedF += dur;
         }
       }
@@ -1143,7 +1240,7 @@
           if (s.type === 'star') {
             layerContent += `<g transform="translate(${Math.round(s.x)}, ${Math.round(s.y)})"><polygon points="${getStarPoints(0, 0, 8, 22, 10)}" fill="#ef4444" stroke="#991b1b" stroke-width="2"/><text x="0" y="4" fill="#fff" font-family="Arial" font-weight="900" font-size="10" text-anchor="middle">!</text></g>\n`;
           } else {
-            layerContent += `<text x="${Math.round(s.x)}" y="${Math.round(s.y)}" fill="#15803d" font-family="Arial" font-weight="900" font-size="22" text-anchor="middle">${s.text}</text>\n`;
+            layerContent += `<text x="${Math.round(s.x)}" y="${Math.round(s.y)}" fill="#15803d" font-family="Arial" font-weight="900" font-size="22" text-anchor="middle">${escapeXml(s.text)}</text>\n`;
           }
         });
 
@@ -1159,7 +1256,7 @@
         const fill = t.type === 'og' ? '#15803d' : (t.type === 'opp' ? '#dc2626' : '#0f172a');
         const r = t.type === 'ball' ? 9 : 17;
         const stroke = t.type === 'ball' ? '#ffffff' : '#0f172a';
-        const txt = t.type !== 'ball' ? `<text x="0" y="4" fill="#ffffff" font-family="Arial" font-weight="bold" font-size="${t.label.length > 2 ? 10 : 12}" text-anchor="middle">${t.label}</text>` : '';
+        const txt = t.type !== 'ball' ? `<text x="0" y="4" fill="#ffffff" font-family="Arial" font-weight="bold" font-size="${t.label.length > 2 ? 10 : 12}" text-anchor="middle">${escapeXml(t.label)}</text>` : '';
         tokensSvg += `  <g ${animCls} transform="translate(${Math.round(t.x)}, ${Math.round(t.y)})"><circle cx="0" cy="0" r="${r}" fill="${fill}" stroke="${stroke}" stroke-width="2.5"/>${txt}</g>\n`;
       });
 
@@ -1181,12 +1278,21 @@
         tokensSvg +
         `</svg>`;
 
-      // Automatycznie wrzucamy wygenerowaną animację do podglądu w zakładce Model Gry oraz kopiujemy do schowka!
-      document.getElementById('animation-container').innerHTML = finalSvg;
-
-      navigator.clipboard.writeText(finalSvg).then(() => {
-        alert("Gotowe! Twoja wieloklatkowa animacja SVG została wygenerowana, wstawiona do podglądu w zakładce 'Model Gry' oraz skopiowana do schowka!\n\nMożesz ją teraz wkleić tutaj na czacie, abyśmy przypisali ją na stałe do wybranej pozycji.");
-      });
+      return finalSvg;
+    }
+    async function exportAnimatedSvg() {
+      if (isPlaying) stopPlayAnimation();
+      const finalSvg = createAnimatedSvg();
+      savedAnimations[activeModule] = JSON.parse(JSON.stringify(frames));
+      showPreview(finalSvg);
+      saveProject();
+      downloadFile(finalSvg, 'olimpia-animacja.svg', 'image/svg+xml;charset=utf-8');
+      try {
+        await navigator.clipboard.writeText(finalSvg);
+        alert('Pobrano SVG, przypisano animację do wybranego modułu i skopiowano kod do schowka.');
+      } catch (_) {
+        alert('Pobrano SVG i przypisano animację do wybranego modułu. Schowek jest niedostępny.');
+      }
     }
 
     // =========================================================================
@@ -1227,7 +1333,9 @@
     function buildMenu() {
       const menuContainer = document.getElementById('menu-container');
       menuContainer.innerHTML = '';
+      const mobile = document.getElementById('mobile-module'); mobile.replaceChildren();
       globalData.forEach((pos, index) => {
+        const option = document.createElement('option'); option.value = index; option.textContent = pos.nazwa; mobile.appendChild(option);
         const btn = document.createElement('button');
         btn.className = 'w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all text-slate-400 hover:bg-slate-800 hover:text-white menu-btn flex items-center';
         let icon = pos.id_pozycji === 'zespol' ? '<i class="fa-solid fa-users text-emerald-500 w-5"></i>' : '<i class="fa-regular fa-user text-emerald-400 w-5"></i>';
@@ -1241,6 +1349,7 @@
     }
 
     function setActiveMenu(index) {
+      document.getElementById('mobile-module').value = index;
       const btns = document.querySelectorAll('.menu-btn');
       btns.forEach((b, i) => {
         if (i == index) {
@@ -1256,6 +1365,9 @@
     function loadPlayer(index) {
       const player = globalData[index];
       if (!player) return;
+      activeModule = index;
+      refreshPreview();
+      saveProject();
 
       document.getElementById('pos-id').innerHTML = player.id_pozycji === 'zespol' ? '<i class="fa-solid fa-users mr-1"></i> Zespół' : '<i class="fa-solid fa-user-astronaut mr-1"></i> Rola: ' + player.id_pozycji.toUpperCase();
       document.getElementById('pos-name').textContent = player.nazwa;
@@ -1287,13 +1399,14 @@
     }
 
     window.onload = () => {
+      let stored = null;
+      try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) stored = validateProject(JSON.parse(raw)); }
+      catch (_) { document.getElementById('save-status').textContent = 'Nie udało się odczytać zapisu.'; }
       buildMenu();
-      initEditor();
-      loadPlayer(0);
-      setActiveMenu(0);
-      // Domyślnie generujemy z inicjalnej klatki podgląd boiska
-      document.getElementById('animation-container').innerHTML = document.getElementById('editor-pitch').outerHTML;
+      if (stored) applyProject(stored);
+      else { initEditor(); loadPlayer(0); setActiveMenu(0); }
     };
+    window.addEventListener('pagehide', saveProject);
   </script>
 </body>
 </html>
