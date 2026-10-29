@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karta Zawodnika | Olimpia Grudziądz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 p-4 font-sans">
+
+  <div id="player-card" class="max-w-md mx-auto bg-slate-800 rounded-xl shadow-lg overflow-hidden border border-slate-700 hidden">
+    <!-- Header -->
+    <div class="bg-slate-950 p-4 border-b border-slate-700 flex justify-between items-center">
+      <h2 id="player-name" class="text-xl font-bold text-white">Nazwa Pozycji</h2>
+      <span id="player-numbers" class="bg-cyan-900 text-cyan-300 text-xs px-2 py-1 rounded-full font-mono">Numery</span>
+    </div>
+
+    <!-- Media Placeholder -->
+    <div class="bg-slate-700 h-48 flex items-center justify-center border-b border-slate-600 relative">
+      <span class="text-slate-400 text-sm">[Miejsce na wideo / animację: <span id="anim-path" class="font-mono text-cyan-400"></span>]</span>
+    </div>
+
+    <div class="p-5 space-y-6">
+      <!-- Taktyka Obrona -->
+      <div>
+        <h3 class="text-sm font-bold text-cyan-400 mb-2 uppercase tracking-wider">🛡️ Działania w obronie</h3>
+        <ul id="list-defense" class="text-sm text-slate-300 space-y-2 list-disc pl-5"></ul>
+      </div>
+
+      <!-- Taktyka Atak -->
+      <div>
+        <h3 class="text-sm font-bold text-emerald-400 mb-2 uppercase tracking-wider">⚔️ Działania w ataku</h3>
+        <ul id="list-attack" class="text-sm text-slate-300 space-y-2 list-disc pl-5"></ul>
+      </div>
+
+      <!-- GPS -->
+      <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">
+        <h3 class="text-xs font-bold text-slate-400 mb-2 uppercase">⚡ Profil GPS (90 min)</h3>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <div><span class="text-slate-500">Dystans:</span> <span id="gps-dist" class="font-mono text-white"></span></div>
+          <div><span class="text-slate-500">HSR:</span> <span id="gps-hsr" class="font-mono text-white"></span></div>
+        </div>
+        <p id="gps-spec" class="text-xs text-slate-400 mt-2 mt-2 leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ładowanie danych z JSON i wstrzykiwanie do DOM
+    fetch('model_gry_1343.json')
+      .then(response => response.json())
+      .then(data => {
+        // Na potrzeby MVP ładujemy pierwszy profil (Środkowi Obrońcy)
+        const player = data.pozycje[0]; 
+        
+        document.getElementById('player-name').textContent = player.nazwa;
+        document.getElementById('player-numbers').textContent = player.numery;
+        document.getElementById('anim-path').textContent = player.multimedia.animacja_placeholder;
+        
+        const defList = document.getElementById('list-defense');
+        player.taktyka_obrona.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          defList.appendChild(li);
+        });
+
+        const attList = document.getElementById('list-attack');
+        player.taktyka_atak.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          attList.appendChild(li);
+        });
+
+        document.getElementById('gps-dist').textContent = player.obciazenia_gps.dystans_km;
+        document.getElementById('gps-hsr').textContent = player.obciazenia_gps.hsr_m;
+        document.getElementById('gps-spec').textContent = player.obciazenia_gps.specyfika;
+
+        document.getElementById('player-card').classList.remove('hidden');
+      })
+      .catch(error => console.error('Błąd ładowania danych:', error));
+  </script>
+</body>
+</html>
