@@ -1,109 +1,137 @@
 {
   "model_gry": "1-3-4-3",
-  "wersja": "1.0_MVP",
+  "wersja": "2.0_Final",
   "pozycje": [
+    {
+      "id_pozycji": "zespol",
+      "numery": "Wszyscy",
+      "nazwa": "Taktyka Zespołowa & SFG",
+      "obciazenia_gps": {
+        "dystans_km": "-",
+        "hsr_m": "-",
+        "sprinty_m": "-",
+        "specyfika": "Automatyzmy zespołowe, Fazy Przejściowe, SFG i #SKAN przestrzeni."
+      },
+      "taktyka_obrona": [
+        "Przejście A-O (Pre-reakcja): Zabezpieczanie korytarzy jeszcze przed stratą piłki.",
+        "Przejście A-O: Natychmiastowa #KLATKA (Gegenpressing 3-5s) lub szybka odbudowa do bloku 1-5-4-1.",
+        "Rest Defense: Utrzymanie prewencyjnej struktury 3+1 lub 3+2 w trakcie naszego ataku.",
+        "SFG Obrona: Stosowanie krycia #HYBRYDA (ścisłe plastry na kluczowych rywali + strefa) oraz asekuracja #PRZEDPOLE.",
+        "SFG Obrona (Auty): Reagowanie hasłem #WYPYCH i dynamiczne wypychanie rywala ze strefy w celu akcji pressingowej.",
+        "Zasada obrony: #KROK_W_GÓRĘ przy zagraniach rywala do tyłu (skracanie pola gry i odzyskanie dystansu)."
+      ],
+      "taktyka_atak": [
+        "Przejście O-A: Szybkie otwarcie (max 2-3 kontakty) i natychmiastowy atak na odsłonięte przestrzenie boczne.",
+        "Opcja Awaryjna (O-A): Zagranie bezpośrednio na #TARCZA do napastnika (9) z obudowaniem go (piątka na kości) celem zebrania drugiej piłki.",
+        "Otwarcie gry: W pierwszej fazie celowe stosowanie #PAUZA, aby wyciągnąć przeciwnika i sprowokować pressing.",
+        "SFG Atak: Wariant #PRZEŁADOWANIE na skrzydle (krótkie rozegranie) wyciągający obrońców z pola karnego.",
+        "SFG Atak: Akcja #WIR w polu karnym – dynamiczne krzyżowe nabiegi stoperów na 5-11 metr zwalniające przestrzeń."
+      ],
+      "multimedia": {
+        "animacja_placeholder": "/assets/anim/zespol.gif",
+        "opis_animacji": "Wizualizacja Gegenpressingu (#KLATKA) oraz założenia Rest Defense (3+1) bezpośrednio po stracie piłki."
+      }
+    },
     {
       "id_pozycji": "cb",
       "numery": "3, 5, 2",
-      "nazwa": "Środkowi Obrońcy (Półlewy, Centralny, Półprawy)",
+      "nazwa": "Środkowi Obrońcy",
       "obciazenia_gps": {
         "dystans_km": "9.0 - 11.5",
         "hsr_m": "800 - 1300",
         "sprinty_m": "200 - 600",
-        "specyfika": "Liczne krótkie przyspieszenia i hamowania. Skanowanie przestrzeni przy asekuracji."
+        "specyfika": "Krótkie przyspieszenia i hamowania. Ciągły #SKAN przestrzeni przy asekuracji bocznych korytarzy."
       },
       "taktyka_obrona": [
-        "Utrzymanie struktury Rest Defense (3+1 lub 3+2) w fazie ataku zespołu.",
-        "Realizacja zasady 'krok w górę' – agresywne skracanie pola przy zagraniach rywala do tyłu.",
-        "Zabezpieczenie przed kontratakiem i gotowość na zbieranie tzw. 'drugich piłek'."
+        "Utrzymanie struktury Rest Defense w fazie ataku i asekuracja wyżej grających wahadłowych.",
+        "Realizacja zasady #KROK_W_GÓRĘ przy zagraniach rywala do tyłu.",
+        "Asekuracja centralna w bloku 1-5-4-1 (obrona niska) oraz zamykanie środka.",
+        "SFG Obrona: Fizyczna dominacja, ścisłe plastrowanie kluczowych graczy rywala (#HYBRYDA)."
       ],
       "taktyka_atak": [
-        "Współpraca w strukturze 'Box Midfield' z bramkarzem i defensywnymi pomocnikami.",
-        "Zastosowanie pauzy z piłką (la pausa), aby sprowokować skok pressingowy rywala.",
-        "Zagrania penetrujące, łamiące linie przeciwnika, bezpośrednio do 'dziesiątek'."
+        "Współpraca w 'Box Midfield' z bramkarzem i defensywnymi pomocnikami (otwarcie niskie).",
+        "Zastosowanie celowej #PAUZA z piłką, aby sprowokować skok pressingowy 1. linii rywala.",
+        "Zagrania penetrujące (łamiące linie) bezpośrednio do 'dziesiątek' operujących w strefie #KIESZEŃ.",
+        "Skrajny stoper wykonuje underlap w przypadku rotacji wahadłowego."
       ],
       "multimedia": {
-        "grafika_taktyczna": "/assets/img/cb_rest_defense_3_1.png",
-        "animacja_placeholder": "/assets/anim/cb_la_pausa_anim.gif",
-        "opis_animacji": "Animacja: Środkowy obrońca przetrzymuje piłkę, rywal doskakuje, obrońca podaje w zwolnioną lukę."
+        "animacja_placeholder": "/assets/anim/cb_la_pausa.gif",
+        "opis_animacji": "Animacja: #PAUZA w wykonaniu stopera, wyskok rywala i penetrujące podanie prostopadłe."
       }
     },
     {
       "id_pozycji": "pivot",
       "numery": "6, 8",
-      "nazwa": "Defensywni Pomocnicy (Pivoty)",
+      "nazwa": "Defensywni Pomocnicy",
       "obciazenia_gps": {
         "dystans_km": "11.5 - 13.5",
         "hsr_m": "1200 - 1800",
         "sprinty_m": "400 - 700",
-        "specyfika": "Wymagany ciągły ruch 'box-to-box', najwyższy dystans całkowity. Gra pod presją."
+        "specyfika": "Ciągły ruch 'box-to-box', najwyższy dystans całkowity. Gra pod presją, ciągły #SKAN."
       },
       "taktyka_obrona": [
         "Ryglowanie sektora centralnego i zamykanie linii podań do napastników rywala.",
-        "Domknięcie klatki w pułapce pressingowej w bocznym sektorze boiska.",
-        "Natychmiastowy udział w kontrpressingu (Gegenpressing 3-5 sekund) po stracie."
+        "Szybki doskok i domknięcie #KLATKA w pułapce pressingowej w bocznym sektorze.",
+        "SFG Obrona: Zbieranie bezpańskich 'drugich piłek' i szczelne zabezpieczanie strefy #PRZEDPOLE."
       ],
       "taktyka_atak": [
-        "Wsparcie przy budowaniu niskim (tworzenie dolnego wierzchołka Box Midfield).",
-        "Utrzymywanie równowagi i balansowanie działań ofensywnych wahadłowych.",
-        "Atakowanie 'drugiego tempa' (okolice 11-14 metra) przy dośrodkowaniach wstecznych (cut-back)."
+        "Tworzenie dolnego wierzchołka Box Midfield we współpracy ze stoperami przy otwarciu.",
+        "Natychmiastowe obudowanie napastnika przy zagraniu awaryjnym na #TARCZA (wsparcie z dołu).",
+        "Atakowanie 'drugiego tempa' (ok. 11-14 metra) przy dośrodkowaniach wstecznych typu cut-back."
       ],
       "multimedia": {
-        "grafika_taktyczna": "/assets/img/pivot_box_midfield.png",
-        "animacja_placeholder": "/assets/anim/pivot_gegenpressing_anim.gif",
-        "opis_animacji": "Animacja: Strata piłki w 3 tercji, natychmiastowy doskok pivota zamykający przestrzeń (3 sekundy)."
+        "animacja_placeholder": "/assets/anim/pivot_klatka.gif",
+        "opis_animacji": "Animacja: Błyskawiczny doskok pivota zamykający opcje podań w pułapce bocznej (#KLATKA)."
       }
     },
     {
       "id_pozycji": "wb",
       "numery": "LWB, RWB",
-      "nazwa": "Wahadłowi (Lewy i Prawy)",
+      "nazwa": "Wahadłowi",
       "obciazenia_gps": {
         "dystans_km": "11.0 - 12.5",
         "hsr_m": "1500 - 2400",
         "sprinty_m": "600 - 1000",
-        "specyfika": "Ekstremalne obciążenie biegami o wysokiej intensywności (HSR). Praca na całej długości korytarza."
+        "specyfika": "Ekstremalne obciążenie HSR na flance. Sprinty na całym korytarzu, szybkie powroty."
       },
       "taktyka_obrona": [
-        "Błyskawiczny i agresywny doskok pressingowy jako zapalnik pułapki na boku boiska.",
-        "W fazie obrony niskiej opadanie do linii defensywy, formując szczelny blok 5 obrońców.",
-        "Krycie hybrydowe (strefowo-indywidualne) przy obronie dośrodkowań."
+        "Zapalnik pułapki pressingowej na flance – agresywny doskok do bocznego obrońcy i założenie #KLATKA.",
+        "W fazie obrony niskiej szybkie opadanie do linii defensywy, formując szczelny blok 5 obrońców.",
+        "Ciągła asekuracja stref bocznych i dostosowanie do ruchu #KROK_W_GÓRĘ całej formacji."
       ],
       "taktyka_atak": [
-        "Zapewnienie maksymalnej szerokości w fazie budowania i rozwinięcia ataku.",
-        "Zsynchronizowane obiegi za plecami (overlap) przy zejściu półskrzydłowych do środka.",
-        "Wygranie pojedynku 1v1 i wykonanie płaskiego podania wstecznego (cut-back)."
+        "Zapewnienie maksymalnej szerokości boiska dla stworzenia przestrzeni w środku (rozciąganie rywala).",
+        "Zsynchronizowane obiegi zewnętrzne (overlap) przy zejściu półskrzydłowych (10/11) do centrum.",
+        "Precyzyjne, płaskie podania wsteczne (cut-back) po wejściu z bocznego korytarza w strefę końcową."
       ],
       "multimedia": {
-        "grafika_taktyczna": "/assets/img/wb_korytarze_boczne.png",
-        "animacja_placeholder": "/assets/anim/wb_overlap_cutback_anim.gif",
-        "opis_animacji": "Animacja: Wahadłowy wykonuje obieg, otrzymuje piłkę i zagrywa płasko na 12. metr."
+        "animacja_placeholder": "/assets/anim/wb_overlap.gif",
+        "opis_animacji": "Animacja: Wahadłowy robi zewnętrzny obieg za 11-tkę i wycofuje piłkę płasko w pole karne."
       }
     },
     {
       "id_pozycji": "am",
       "numery": "10, 11",
-      "nazwa": "Ofensywni Pomocnicy (Półskrzydłowi)",
+      "nazwa": "Półskrzydłowi",
       "obciazenia_gps": {
         "dystans_km": "10.5 - 12.0",
         "hsr_m": "1800 - 2800",
         "sprinty_m": "800 - 1300",
-        "specyfika": "Błyskawiczne zrywanie krycia, prostopadłe wbiegnięcia, bardzo duży wolumen szybkich biegów."
+        "specyfika": "Zrywanie krycia, prostopadłe wbiegnięcia, ciągły #SKAN przestrzeni między formacjami."
       },
       "taktyka_obrona": [
-        "Wąskie ustawienie w pierwszej linii pressingu, odcinające korytarz centralny.",
-        "Wysoki udział w kontrpressingu, szybki doskok od przodu w momencie straty.",
-        "Szybka transformacja i obniżenie pozycji przy zepchnięciu do obrony niskiej."
+        "Wąskie ustawienie w pierwszej linii pressingu, odcinające korytarz centralny przeciwnikowi.",
+        "Szybka transformacja przy stracie piłki i aktywny udział w zakładaniu #KLATKA.",
+        "Obniżenie pozycji w obronie niskiej w celu uszczelnienia bloku na 5-4-1."
       ],
       "taktyka_atak": [
-        "Ciągłe operowanie w półprzestrzeniach ('kieszeniach') i gotowość na przyjęcie piłki łamiącej linie.",
-        "Rozgrywanie szybkiej piłki 'na trzeciego' we współpracy ze środkowym napastnikiem.",
-        "Wbieganie w otwarte korytarze (underlap) po wyciągnięciu obrońcy przez wahadłowego."
+        "Główne zadanie to zajmowanie i wykorzystywanie półprzestrzeni (strefa #KIESZEŃ).",
+        "Gotowość do odegrania na jeden kontakt (gra 'na trzeciego') wspólnie ze środkowym napastnikiem.",
+        "Uzupełnianie struktury przy zagraniu na #TARCZA (obudowanie napastnika z góry, zamykające tzw. 'piątkę na kości')."
       ],
       "multimedia": {
-        "grafika_taktyczna": "/assets/img/am_polprzestrzenie.png",
-        "animacja_placeholder": "/assets/anim/am_gra_na_trzeciego_anim.gif",
-        "opis_animacji": "Animacja: Środkowy obrońca gra do napastnika(9), ten zbija na jeden kontakt do wbiegającej 'dziesiątki'."
+        "animacja_placeholder": "/assets/anim/am_kieszen.gif",
+        "opis_animacji": "Animacja: Odbiór piłki łamiącej linie w strefie #KIESZEŃ i natychmiastowe napędzenie ataku."
       }
     },
     {
@@ -114,22 +142,21 @@
         "dystans_km": "9.5 - 11.5",
         "hsr_m": "1200 - 1800",
         "sprinty_m": "500 - 800",
-        "specyfika": "Duża praca siłowa, gra w kontakcie, krótkie i intensywne skoki pressingowe."
+        "specyfika": "Praca siłowa w zwarciu (ściana), gra tyłem do bramki, eksplozywne skoki w 1. linii."
       },
       "taktyka_obrona": [
-        "Wyznaczanie kierunku wysokiego pressingu (odcinanie jednej ze stron rywala).",
-        "Uniemożliwienie zmiany centrum gry (przez bramkarza lub stoperów).",
-        "Gotowość do natychmiastowego wykorzystania błędu przy zakładaniu Gegenpressingu przez partnerów."
+        "Inicjowanie wysokiego pressingu poprzez kierunkowanie akcji i odcinanie stoperów od gry w centrum.",
+        "Zmuszanie bramkarza do podjęcia ryzyka lub niedokładnego podania, ograniczanie opcji zmiany strony.",
+        "Ciągła gotowość do wzięcia udziału w #KLATKA zaraz po ewentualnej stracie pod polem karnym rywala."
       ],
       "taktyka_atak": [
-        "Aktywna gra tyłem do bramki ('ściana') i wiązanie środkowych obrońców przeciwnika.",
-        "Stwarzanie przestrzeni dla wbiegających z głębi zawodników nr 10 i 11.",
-        "Finalizacja dośrodkowań i wcięć w polu karnym, gra na wyprzedzenie na pierwszym słupku."
+        "Pełnienie funkcji #TARCZA przy długim i awaryjnym podaniu z utrzymaniem piłki 'na plecach' przy obrońcy.",
+        "Kluczowa rola w grze 'na trzeciego' – zgranie na jeden kontakt ('zbicie') do przemieszczających się 10/11.",
+        "Walka o pozycję przed obrońcą na krótkim słupku lub finalizacja płaskich dośrodkowań typu cut-back."
       ],
       "multimedia": {
-        "grafika_taktyczna": "/assets/img/st_press_kierunkowy.png",
-        "animacja_placeholder": "/assets/anim/st_sciana_anim.gif",
-        "opis_animacji": "Animacja: Napastnik przyjmuje z obrońcą na plecach, odgrywa do tyłu (opcja tył) i natychmiast obraca się atakując pole karne."
+        "animacja_placeholder": "/assets/anim/st_tarcza.gif",
+        "opis_animacji": "Animacja: #TARCZA - 9-tka zabezpiecza piłkę tyłem do bramki rywala i zgrywa ją do asystującej 'dziesiątki'."
       }
     }
   ]
