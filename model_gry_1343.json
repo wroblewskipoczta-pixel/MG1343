@@ -28,7 +28,7 @@
         "SFG Atak: Akcja #WIR w polu karnym – dynamiczne krzyżowe nabiegi stoperów na 5-11 metr zwalniające przestrzeń."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/zespol.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Wizualizacja Gegenpressingu (#KLATKA) oraz założenia Rest Defense (3+1) bezpośrednio po stracie piłki."
       }
     },
@@ -55,7 +55,7 @@
         "Skrajny stoper wykonuje underlap w przypadku rotacji wahadłowego."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/cb_la_pausa.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Animacja: #PAUZA w wykonaniu stopera, wyskok rywala i penetrujące podanie prostopadłe."
       }
     },
@@ -80,7 +80,7 @@
         "Atakowanie 'drugiego tempa' (ok. 11-14 metra) przy dośrodkowaniach wstecznych typu cut-back."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/pivot_klatka.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Animacja: Błyskawiczny doskok pivota zamykający opcje podań w pułapce bocznej (#KLATKA)."
       }
     },
@@ -105,7 +105,7 @@
         "Precyzyjne, płaskie podania wsteczne (cut-back) po wejściu z bocznego korytarza w strefę końcową."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/wb_overlap.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Animacja: Wahadłowy robi zewnętrzny obieg za 11-tkę i wycofuje piłkę płasko w pole karne."
       }
     },
@@ -130,7 +130,7 @@
         "Uzupełnianie struktury przy zagraniu na #TARCZA (obudowanie napastnika z góry, zamykające tzw. 'piątkę na kości')."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/am_kieszen.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Animacja: Odbiór piłki łamiącej linie w strefie #KIESZEŃ i natychmiastowe napędzenie ataku."
       }
     },
@@ -155,7 +155,7 @@
         "Walka o pozycję przed obrońcą na krótkim słupku lub finalizacja płaskich dośrodkowań typu cut-back."
       ],
       "multimedia": {
-        "animacja_placeholder": "/assets/anim/st_tarcza.gif",
+        "animacja_placeholder": "assets/anim/klatka.svg",
         "opis_animacji": "Animacja: #TARCZA - 9-tka zabezpiecza piłkę tyłem do bramki rywala i zgrywa ją do asystującej 'dziesiątki'."
       }
     }
