@@ -1,0 +1,136 @@
+{
+  "model_gry": "1-3-4-3",
+  "wersja": "1.0_MVP",
+  "pozycje": [
+    {
+      "id_pozycji": "cb",
+      "numery": "3, 5, 2",
+      "nazwa": "Środkowi Obrońcy (Półlewy, Centralny, Półprawy)",
+      "obciazenia_gps": {
+        "dystans_km": "9.0 - 11.5",
+        "hsr_m": "800 - 1300",
+        "sprinty_m": "200 - 600",
+        "specyfika": "Liczne krótkie przyspieszenia i hamowania. Skanowanie przestrzeni przy asekuracji."
+      },
+      "taktyka_obrona": [
+        "Utrzymanie struktury Rest Defense (3+1 lub 3+2) w fazie ataku zespołu.",
+        "Realizacja zasady 'krok w górę' – agresywne skracanie pola przy zagraniach rywala do tyłu.",
+        "Zabezpieczenie przed kontratakiem i gotowość na zbieranie tzw. 'drugich piłek'."
+      ],
+      "taktyka_atak": [
+        "Współpraca w strukturze 'Box Midfield' z bramkarzem i defensywnymi pomocnikami.",
+        "Zastosowanie pauzy z piłką (la pausa), aby sprowokować skok pressingowy rywala.",
+        "Zagrania penetrujące, łamiące linie przeciwnika, bezpośrednio do 'dziesiątek'."
+      ],
+      "multimedia": {
+        "grafika_taktyczna": "/assets/img/cb_rest_defense_3_1.png",
+        "animacja_placeholder": "/assets/anim/cb_la_pausa_anim.gif",
+        "opis_animacji": "Animacja: Środkowy obrońca przetrzymuje piłkę, rywal doskakuje, obrońca podaje w zwolnioną lukę."
+      }
+    },
+    {
+      "id_pozycji": "pivot",
+      "numery": "6, 8",
+      "nazwa": "Defensywni Pomocnicy (Pivoty)",
+      "obciazenia_gps": {
+        "dystans_km": "11.5 - 13.5",
+        "hsr_m": "1200 - 1800",
+        "sprinty_m": "400 - 700",
+        "specyfika": "Wymagany ciągły ruch 'box-to-box', najwyższy dystans całkowity. Gra pod presją."
+      },
+      "taktyka_obrona": [
+        "Ryglowanie sektora centralnego i zamykanie linii podań do napastników rywala.",
+        "Domknięcie klatki w pułapce pressingowej w bocznym sektorze boiska.",
+        "Natychmiastowy udział w kontrpressingu (Gegenpressing 3-5 sekund) po stracie."
+      ],
+      "taktyka_atak": [
+        "Wsparcie przy budowaniu niskim (tworzenie dolnego wierzchołka Box Midfield).",
+        "Utrzymywanie równowagi i balansowanie działań ofensywnych wahadłowych.",
+        "Atakowanie 'drugiego tempa' (okolice 11-14 metra) przy dośrodkowaniach wstecznych (cut-back)."
+      ],
+      "multimedia": {
+        "grafika_taktyczna": "/assets/img/pivot_box_midfield.png",
+        "animacja_placeholder": "/assets/anim/pivot_gegenpressing_anim.gif",
+        "opis_animacji": "Animacja: Strata piłki w 3 tercji, natychmiastowy doskok pivota zamykający przestrzeń (3 sekundy)."
+      }
+    },
+    {
+      "id_pozycji": "wb",
+      "numery": "LWB, RWB",
+      "nazwa": "Wahadłowi (Lewy i Prawy)",
+      "obciazenia_gps": {
+        "dystans_km": "11.0 - 12.5",
+        "hsr_m": "1500 - 2400",
+        "sprinty_m": "600 - 1000",
+        "specyfika": "Ekstremalne obciążenie biegami o wysokiej intensywności (HSR). Praca na całej długości korytarza."
+      },
+      "taktyka_obrona": [
+        "Błyskawiczny i agresywny doskok pressingowy jako zapalnik pułapki na boku boiska.",
+        "W fazie obrony niskiej opadanie do linii defensywy, formując szczelny blok 5 obrońców.",
+        "Krycie hybrydowe (strefowo-indywidualne) przy obronie dośrodkowań."
+      ],
+      "taktyka_atak": [
+        "Zapewnienie maksymalnej szerokości w fazie budowania i rozwinięcia ataku.",
+        "Zsynchronizowane obiegi za plecami (overlap) przy zejściu półskrzydłowych do środka.",
+        "Wygranie pojedynku 1v1 i wykonanie płaskiego podania wstecznego (cut-back)."
+      ],
+      "multimedia": {
+        "grafika_taktyczna": "/assets/img/wb_korytarze_boczne.png",
+        "animacja_placeholder": "/assets/anim/wb_overlap_cutback_anim.gif",
+        "opis_animacji": "Animacja: Wahadłowy wykonuje obieg, otrzymuje piłkę i zagrywa płasko na 12. metr."
+      }
+    },
+    {
+      "id_pozycji": "am",
+      "numery": "10, 11",
+      "nazwa": "Ofensywni Pomocnicy (Półskrzydłowi)",
+      "obciazenia_gps": {
+        "dystans_km": "10.5 - 12.0",
+        "hsr_m": "1800 - 2800",
+        "sprinty_m": "800 - 1300",
+        "specyfika": "Błyskawiczne zrywanie krycia, prostopadłe wbiegnięcia, bardzo duży wolumen szybkich biegów."
+      },
+      "taktyka_obrona": [
+        "Wąskie ustawienie w pierwszej linii pressingu, odcinające korytarz centralny.",
+        "Wysoki udział w kontrpressingu, szybki doskok od przodu w momencie straty.",
+        "Szybka transformacja i obniżenie pozycji przy zepchnięciu do obrony niskiej."
+      ],
+      "taktyka_atak": [
+        "Ciągłe operowanie w półprzestrzeniach ('kieszeniach') i gotowość na przyjęcie piłki łamiącej linie.",
+        "Rozgrywanie szybkiej piłki 'na trzeciego' we współpracy ze środkowym napastnikiem.",
+        "Wbieganie w otwarte korytarze (underlap) po wyciągnięciu obrońcy przez wahadłowego."
+      ],
+      "multimedia": {
+        "grafika_taktyczna": "/assets/img/am_polprzestrzenie.png",
+        "animacja_placeholder": "/assets/anim/am_gra_na_trzeciego_anim.gif",
+        "opis_animacji": "Animacja: Środkowy obrońca gra do napastnika(9), ten zbija na jeden kontakt do wbiegającej 'dziesiątki'."
+      }
+    },
+    {
+      "id_pozycji": "st",
+      "numery": "9",
+      "nazwa": "Środkowy Napastnik",
+      "obciazenia_gps": {
+        "dystans_km": "9.5 - 11.5",
+        "hsr_m": "1200 - 1800",
+        "sprinty_m": "500 - 800",
+        "specyfika": "Duża praca siłowa, gra w kontakcie, krótkie i intensywne skoki pressingowe."
+      },
+      "taktyka_obrona": [
+        "Wyznaczanie kierunku wysokiego pressingu (odcinanie jednej ze stron rywala).",
+        "Uniemożliwienie zmiany centrum gry (przez bramkarza lub stoperów).",
+        "Gotowość do natychmiastowego wykorzystania błędu przy zakładaniu Gegenpressingu przez partnerów."
+      ],
+      "taktyka_atak": [
+        "Aktywna gra tyłem do bramki ('ściana') i wiązanie środkowych obrońców przeciwnika.",
+        "Stwarzanie przestrzeni dla wbiegających z głębi zawodników nr 10 i 11.",
+        "Finalizacja dośrodkowań i wcięć w polu karnym, gra na wyprzedzenie na pierwszym słupku."
+      ],
+      "multimedia": {
+        "grafika_taktyczna": "/assets/img/st_press_kierunkowy.png",
+        "animacja_placeholder": "/assets/anim/st_sciana_anim.gif",
+        "opis_animacji": "Animacja: Napastnik przyjmuje z obrońcą na plecach, odgrywa do tyłu (opcja tył) i natychmiast obraca się atakując pole karne."
+      }
+    }
+  ]
+}
