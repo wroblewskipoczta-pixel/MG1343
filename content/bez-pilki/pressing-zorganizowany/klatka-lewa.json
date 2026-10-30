@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "bez-pilki.pressing-zorganizowany.klatka-lewa",
+  "version": "1.0.0",
+  "title": "#KLATKA — pułapka przy linii",
+  "language": "pl",
+  "phase": "bez-pilki",
+  "module": "pressing-zorganizowany",
+  "side": "lewa-olimpia",
+  "baseFormation": "1-3-4-3",
+  "opponentExampleFormation": "1-4-3-3",
+  "roleIds": [
+    "gk",
+    "lcb",
+    "ccb",
+    "rcb",
+    "lwb",
+    "cm-near",
+    "cm-far",
+    "rwb",
+    "am-near",
+    "st",
+    "am-far"
+  ],
+  "roleLabels": {
+    "gk": "1",
+    "lcb": "3",
+    "ccb": "5",
+    "rcb": "2",
+    "lwb": "LWB",
+    "cm-near": "6",
+    "cm-far": "8",
+    "rwb": "RWB",
+    "am-near": "10",
+    "st": "9",
+    "am-far": "11"
+  },
+  "tags": [
+    "KLATKA",
+    "pressing",
+    "boczny-sektor",
+    "asekuracja"
+  ],
+  "learningObjective": "Rozpoznaj warunki wspólnego doskoku, swoją rolę oraz moment przerwania pressingu.",
+  "contentPath": "content/bez-pilki/pressing-zorganizowany/klatka-lewa.md",
+  "animation": {
+    "status": "brief-ready",
+    "assetId": null,
+    "transitionSeconds": [
+      2.0,
+      1.5
+    ],
+    "finalHoldSeconds": 2.0,
+    "autoplay": false,
+    "loop": false
+  },
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "approval": {
+    "structureApproved": true,
+    "contentApproved": true,
+    "approvedBy": "Łukasz Wróblewski",
+    "approvedAt": "2026-10-29"
+  },
+  "sourceRefs": [
+    "po-scenario-klatka",
+    "model-gry-olimpia-1343"
+  ],
+  "evidenceStatus": "po-approved-club-model",
+  "roles": [
+    {
+      "id": "gk",
+      "label": "1",
+      "name": "bramkarz",
+      "observe": "Długie podanie, przestrzeń za linią obrony, ustawienie stoperów.",
+      "action": "Dostosowuję pozycję do piłki i linii obrony. Informuję o biegu za plecy i jestem gotowy do interwencji.",
+      "avoid": "Ustawienia na stałej wysokości niezależnie od presji na piłkę."
+    },
+    {
+      "id": "lcb",
+      "label": "3",
+      "name": "lewy stoper",
+      "observe": "Rywala za LWB i możliwość podania wzdłuż linii.",
+      "action": "Przesuwam się w stronę piłki i zabezpieczam przestrzeń za LWB. Mogę wejść w pojedynek po podaniu do mojego sektora.",
+      "avoid": "Doskoku do BO, jeśli LWB już go naciska i odsłoniłbym głębokość."
+    },
+    {
+      "id": "ccb",
+      "label": "5",
+      "name": "środkowy stoper",
+      "observe": "Napastnika i przestrzeń otwieraną przez przesunięcie 3.",
+      "action": "Przesuwam się, zachowując ochronę środka i głębokości. Komunikuję ustawienie linii.",
+      "avoid": "Skupienia całej uwagi na pułapce i zgubienia napastnika."
+    },
+    {
+      "id": "rcb",
+      "label": "2",
+      "name": "prawy stoper",
+      "observe": "Rywali w środku i możliwość diagonalnego podania.",
+      "action": "Zawężam z linią obrony; kontroluję zawodnika i przestrzeń po dalszej stronie.",
+      "avoid": "Pozostania szeroko bez związku z przesunięciem partnerów."
+    },
+    {
+      "id": "lwb",
+      "label": "LWB",
+      "name": "lewy wahadłowy",
+      "observe": "Moment podania, przyjęcie BO oraz wsparcie 6 i 3.",
+      "action": "Doskakuję podczas podania. Kontroluję tempo dojścia i ograniczam grę wzdłuż linii w stronę naszej bramki.",
+      "avoid": "Wpadania w rywala, pochopnego wślizgu i zostawienia łatwego wyjścia pierwszym kontaktem."
+    },
+    {
+      "id": "rwb",
+      "label": "RWB",
+      "name": "prawy wahadłowy",
+      "observe": "Rywala po dalszej stronie i możliwość zmiany strony.",
+      "action": "Zawężam i dostosowuję wysokość do linii obrony. Utrzymuję możliwość reakcji na diagonalne podanie.",
+      "avoid": "Patrzenia tylko na piłkę i porzucenia rywala po dalszej stronie."
+    },
+    {
+      "id": "cm-near",
+      "label": "6",
+      "name": "bliższy środkowy pomocnik",
+      "observe": "Podanie od BO do środkowego pomocnika rywala.",
+      "action": "Przesuwam się pod pułapkę, zamykam najbliższą drogę do środka i jestem gotowy do przechwytu lub drugiej piłki.",
+      "avoid": "Dublowania nacisku LWB kosztem otwarcia centrum."
+    },
+    {
+      "id": "cm-far",
+      "label": "8",
+      "name": "dalszy środkowy pomocnik",
+      "observe": "Drugiego rywala w środku i przestrzeń za przesuwającą się 6.",
+      "action": "Przesuwam się razem z 6, utrzymując osłonę centrum i gotowość do drugiej piłki.",
+      "avoid": "Podążania za 6 aż pod linię boczną."
+    },
+    {
+      "id": "am-near",
+      "label": "10",
+      "name": "bliższy półskrzydłowy",
+      "observe": "Linię podania BO → prawy stoper rywala.",
+      "action": "Przesuwam się po łuku tak, żeby ograniczyć powrót do stopera, zachowując współpracę z LWB i 6.",
+      "avoid": "Biegu prosto na BO, który otworzy podanie powrotne."
+    },
+    {
+      "id": "st",
+      "label": "9",
+      "name": "napastnik",
+      "observe": "Najgłębszego pomocnika rywala i możliwość wyjścia przez stoperów.",
+      "action": "Dostosowuję pozycję do ruchu 10, utrudniam centralne wyjście i przygotowuję kolejny nacisk po podaniu do tyłu.",
+      "avoid": "Dublowania 10 przy BO i pozostawienia wolnego środka."
+    },
+    {
+      "id": "am-far",
+      "label": "11",
+      "name": "dalszy półskrzydłowy",
+      "observe": "Dalszego pomocnika i możliwość przeniesienia gry.",
+      "action": "Zawężam pierwszą linię, pomagam zamknąć centrum i przygotowuję reakcję na zmianę strony.",
+      "avoid": "Przesunięcia aż pod piłkę, po którym rywal łatwo wyjdzie po dalszej stronie."
+    }
+  ],
+  "goal": "Ograniczamy rywalowi grę do przodu i do środka. Szukamy odbioru lub wymuszamy niedokładne zagranie.",
+  "principle": "Jeden naciska na piłkę. Partnerzy zamykają wyjścia i zabezpieczają przestrzeń.",
+  "stages": [
+    {
+      "title": "Zaproś na bok",
+      "caption": "Zamknij środek. Przygotuj wspólny doskok.",
+      "points": [
+        "10, 9 i 11 utrudniają podanie przez środek.",
+        "LWB przygotowuje doskok. 6 i 3 sprawdzają rywali oraz asekurację."
+      ]
+    },
+    {
+      "title": "Ruszcie razem",
+      "caption": "Piłka w drodze — każdy zamyka swoje wyjście.",
+      "points": [
+        "LWB rusza podczas podania, jeśli ma wsparcie.",
+        "10 zamyka powrót, 6 ogranicza środek, 3 chroni przestrzeń za LWB."
+      ]
+    },
+    {
+      "title": "Kontroluj i odbierz",
+      "caption": "Wykorzystaj błąd. Utrzymaj asekurację.",
+      "points": [
+        "LWB kontroluje dojście i wykorzystuje zbyt długi kontakt rywala.",
+        "Partnerzy utrzymują swoje zadania. Odbiór jest możliwością, nie gwarancją."
+      ]
+    }
+  ],
+  "stopConditions": [
+    "Nie zdążysz wywrzeć presji przed swobodnym zagraniem rywala do przodu.",
+    "Za LWB brakuje zabezpieczenia, a rywal może wykorzystać tę przestrzeń.",
+    "Wyjście do środka pozostaje otwarte, a partnerzy nie zdążą go zamknąć."
+  ],
+  "exitRule": "Rywal wyszedł z kontrolą piłki i może grać do przodu? Najbliższy opóźnia akcję, pozostali chronią środek i głębokość oraz odbudowują ustawienie.",
+  "recovery": "Po odbiorze sprawdź możliwość bezpiecznej gry do przodu. Jeśli jej nie ma, zabezpiecz piłkę i znajdź wsparcie.",
+  "movement": [
+    "Kontroluj ostatnie kroki przed rywalem.",
+    "Ustaw ciało do reakcji na pierwszy kontakt.",
+    "Po podaniu rywala odzyskaj pozycję do kolejnego działania."
+  ],
+  "questions": [
+    {
+      "question": "Jesteś LWB. Za Tobą brakuje asekuracji. Co sprawdzasz przed doskokiem?",
+      "answer": "Sprawdzam wsparcie i możliwość skutecznej presji. Bez tych warunków chronię przestrzeń i komunikuję zagrożenie."
+    },
+    {
+      "question": "LWB naciska BO. Dlaczego 6 nie biegnie automatycznie do tej samej piłki?",
+      "answer": "6 ogranicza wyjście do środka. Reaguje na okazję do przechwytu, ale nie porzuca bez oceny swojego zadania."
+    },
+    {
+      "question": "Rywal wyszedł do środka i obrócił się z piłką. Co robimy?",
+      "answer": "Najbliższy opóźnia akcję. Reszta chroni środek i głębokość oraz odbudowuje ustawienie."
+    }
+  ]
+}
