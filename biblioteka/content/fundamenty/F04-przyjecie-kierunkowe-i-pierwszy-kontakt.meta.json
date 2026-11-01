@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "fundamenty.przyjecie-kierunkowe-i-pierwszy-kontakt",
+  "code": "F04",
+  "title": "Przyjęcie kierunkowe i pierwszy kontakt",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "fundamenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "cel-pierwszego-kontaktu",
+      "label": "Cel pierwszego kontaktu"
+    },
+    {
+      "id": "kierunek-i-odleglosc",
+      "label": "Kierunek i odległość kontaktu"
+    },
+    {
+      "id": "kontakt-pod-naciskiem",
+      "label": "Kontakt pod naciskiem"
+    },
+    {
+      "id": "dostosowanie-do-pilki",
+      "label": "Dostosowanie do piłki i zmiany warunków"
+    }
+  ],
+  "actions": [
+    {
+      "id": "F04.D01",
+      "title": "Wybierz cel pierwszego kontaktu",
+      "principleIds": [
+        "cel-pierwszego-kontaktu"
+      ],
+      "visualId": "F04.G01",
+      "videoClips": []
+    },
+    {
+      "id": "F04.D02",
+      "title": "Nadaj piłce kierunek i odległość do kontynuacji",
+      "principleIds": [
+        "kierunek-i-odleglosc"
+      ],
+      "visualId": "F04.G02",
+      "videoClips": []
+    },
+    {
+      "id": "F04.D03",
+      "title": "Przyjmij poza naciskiem lub zagraj do wsparcia",
+      "principleIds": [
+        "kontakt-pod-naciskiem"
+      ],
+      "visualId": "F04.G03",
+      "videoClips": []
+    },
+    {
+      "id": "F04.D04",
+      "title": "Dostosuj kontakt do trudnej piłki i zmienionych warunków",
+      "principleIds": [
+        "dostosowanie-do-pilki"
+      ],
+      "visualId": "F04.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F05",
+    "F06",
+    "P01",
+    "A08"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "F05",
+  "contentPath": "content/fundamenty/F04-przyjecie-kierunkowe-i-pierwszy-kontakt.md",
+  "packageVersion": "1.0.0",
+  "contentModel": "actions"
+}

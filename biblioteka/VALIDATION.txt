@@ -1,0 +1,3 @@
+PASS: 44 lekcje, 44 pliki metadanych, 172 numerowane działania, 172 identyfikatory briefów oraz scenariusz O04.
+PASS: kody, unikalność ID, ścieżki, JSON, powiązania, kolejność i sumy SHA-256.
+Zakres: kontrola strukturalna; bez testów aplikacji i oceny merytorycznej.

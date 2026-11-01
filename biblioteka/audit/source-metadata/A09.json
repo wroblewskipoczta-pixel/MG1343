@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "z-pilka.zabezpieczenie-ataku",
+  "code": "A09",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "z-pilka",
+  "audience": "olimpia-zespol",
+  "title": "Zabezpieczenie ataku przed stratą: 3+2",
+  "exampleFormation": "1-3-4-3",
+  "restDefence": "3+2",
+  "baseBackThree": [
+    "3",
+    "5",
+    "2"
+  ],
+  "basePivots": [
+    "6",
+    "8"
+  ],
+  "goalkeeperAdditionalCover": true,
+  "scopeApproved": true,
+  "contentApproved": true,
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "approvalBasis": "Akceptacje PO dla D01–D05 i rotacji w rozmowie",
+  "actions": [
+    {
+      "id": "A09.D01",
+      "title": "Rozpoznaj zagrożenie przed stratą",
+      "visual": "A09.G01"
+    },
+    {
+      "id": "A09.D02",
+      "title": "Ustaw zabezpieczenie 3+2",
+      "visual": "A09.G02"
+    },
+    {
+      "id": "A09.D03",
+      "title": "Przesuwaj zabezpieczenie za atakiem",
+      "visual": "A09.G03"
+    },
+    {
+      "id": "A09.D04",
+      "title": "Zabezpiecz wejście partnera do ataku",
+      "visual": "A09.G04"
+    },
+    {
+      "id": "A09.D05",
+      "title": "Przygotuj pierwszą reakcję na stratę",
+      "visual": "A09.G05"
+    }
+  ],
+  "rotations": [
+    {
+      "advancing": "6",
+      "backThree": [
+        "3",
+        "5",
+        "2"
+      ],
+      "pivots": [
+        "10",
+        "8"
+      ]
+    },
+    {
+      "advancing": "8",
+      "backThree": [
+        "3",
+        "5",
+        "2"
+      ],
+      "pivots": [
+        "6",
+        "11"
+      ]
+    },
+    {
+      "advancing": "3",
+      "backThree": [
+        "6",
+        "5",
+        "2"
+      ],
+      "pivots": [
+        "10",
+        "8"
+      ]
+    },
+    {
+      "advancing": "2",
+      "backThree": [
+        "3",
+        "5",
+        "8"
+      ],
+      "pivots": [
+        "6",
+        "11"
+      ]
+    }
+  ],
+  "relatedLessons": [
+    "F03",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "O01",
+    "O08",
+    "P02",
+    "P05"
+  ]
+}

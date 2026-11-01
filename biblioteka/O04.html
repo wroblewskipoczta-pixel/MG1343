@@ -1,0 +1,154 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Model gry Olimpii — biblioteka 44 lekcji taktycznych."><title>#KLATKA — pułapka przy linii · MG1343</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Przejdź do treści</a><header class="bar"><a class="brand" href="index.html">OLIMPIA / MG1343</a><nav class="actions" aria-label="Nawigacja główna"><a href="index.html">44 lekcje</a><a href="../index.html">Animacja #KLATKA</a><a href="../studio.html">Warsztat trenera</a></nav></header><main id="main" class="wrap reading"><div class="eyebrow">Bez piłki / O04</div><h1>#KLATKA — pułapka przy linii</h1><div class="actions"><a href="index.html?dzial=obrona">← Dział: Bez piłki</a><a href="content/obrona/O04-klatka-lewa.md" download>Pobierz pełną lekcję</a></div><p class="note"><a href="../index.html">Otwórz animację #KLATKA i wybierz swoją pozycję →</a></p><article><p>Wersja: 1.0 · Data: 2026-10-29 · Klub: Akademia Olimpia Grudziądz</p>
+<p>Status: <strong>Wersja finałowa — Gotowe do kodowania</strong>. PO (Łukasz Wróblewski) zatwierdził strukturę i podział odpowiedzialności w lekcji. Treść i brief stanowią podstawę implementacji tego wariantu. Wdrożenie, testy aplikacji i pilotaż z zawodnikami pozostają do wykonania.</p>
+<h2>1. Zakres i podstawa opracowania</h2>
+<ul>
+<li>Dział: Bez piłki.</li>
+<li>Moduł: Pressing zorganizowany.</li>
+<li>Lekcja: Pułapka przy linii — #KLATKA.</li>
+<li>Kontekst: rywal buduje od własnej bramki; Olimpia jest ustawiona do pressingu i kieruje rozegranie na swoją lewą stronę.</li>
+<li>System wyjściowy Olimpii: 1-3-4-3. Numery oznaczają role, nie numery koszulek konkretnych zawodników.</li>
+<li>W tym przykładzie 10 działa po lewej stronie Olimpii, 11 po prawej. LWB to lewy, RWB to prawy wahadłowy.</li>
+<li>Scenariusz wzorcowy: rywal 1-4-3-3, podanie prawego stopera do prawego bocznego obrońcy rywala. To jawne założenie lekcji, nie szablon na każde ustawienie przeciwnika.</li>
+<li>Poza sprintem: kontrpressing po naszej stracie, inne warianty pressingu i lustrzana wersja na drugą stronę.</li>
+</ul>
+<p>Materiały wykorzystane: scenariusz PO z rozmowy; dokument „Analiza systemu 1-3-4-3 Olimpia” oraz kod aplikacji MG1343, przeczytane podczas audytu. Niniejszy podział ról został zatwierdzony przez PO dla opisanego wariantu; warunki uruchomienia i przerwania stanowią część tej lekcji. Nie stanowią weryfikacji wszystkich twierdzeń naukowych i danych GPS z dokumentu źródłowego.</p>
+<p>Źródło dokumentu: https://docs.google.com/document/d/1912bwJskrT6CJkIJ5g5RS-bbPTwVOCRZxfWLx0pf1W8/edit</p>
+<p>Źródło audytu kodu: https://github.com/wroblewskipoczta-pixel/MG1343/blob/main/index.html — analizowany blob: fe60985e740aa52fb9d1d135a536dd1acd6d762a.</p>
+<h2>2. Lekcja — treść dla zawodnika</h2>
+<h3>#KLATKA — zamknij rywala przy linii</h3>
+<p><strong>Cel:</strong> ograniczamy rywalowi grę do przodu i do środka. Szukamy odbioru lub wymuszamy zagranie, które potrafimy przejąć.</p>
+<p><strong>Zapamiętaj:</strong> jeden naciska na piłkę, partnerzy zamykają wyjścia i zabezpieczają przestrzeń.</p>
+<h3>Krok 1. Zaproś podanie na bok</h3>
+<ul>
+<li>10, 9 i 11 ustawiają się tak, żeby utrudnić podanie przez środek.</li>
+<li>LWB utrzymuje odległość, z której może doskoczyć podczas podania.</li>
+<li>6 i 3 sprawdzają rywali oraz przestrzeń, którą trzeba zabezpieczyć za LWB.</li>
+</ul>
+<p><strong>Patrz na piłkę, rywali i gotowość partnerów. Samo podanie na bok nie wystarcza.</strong></p>
+<h3>Krok 2. Ruszcie razem</h3>
+<ul>
+<li>Piłka opuszcza nogę stopera i zmierza do bocznego obrońcy: LWB rozpoczyna doskok, jeśli ma wsparcie.</li>
+<li>10 zamyka podanie powrotne do stopera. 6 przesuwa się, żeby ograniczyć podanie do środka.</li>
+<li>3 zabezpiecza przestrzeń za LWB; pozostali przesuwają ustawienie w stronę piłki.</li>
+</ul>
+<p><strong>Nie czekaj z reakcją do przyjęcia piłki. Nie ruszaj też tak wcześnie, żeby rywal łatwo zmienił kierunek podania.</strong></p>
+<h3>Krok 3. Kontroluj rywala i szukaj odbioru</h3>
+<ul>
+<li>LWB kontroluje dojście i ogranicza zagranie wzdłuż linii w stronę naszej bramki.</li>
+<li>Partnerzy utrzymują zamknięte wyjścia. Nie zbiegają się wszyscy do piłki.</li>
+<li>Gdy rywal wypuści piłkę lub zagra niedokładnie, najbliższy zawodnik próbuje ją przejąć, a reszta utrzymuje asekurację.</li>
+</ul>
+<p><strong>Odbiór jest możliwością, nie gwarantowanym zakończeniem każdej akcji.</strong></p>
+<h3>Kiedy nie uruchamiamy pułapki?</h3>
+<ul>
+<li>LWB nie zdąży wywrzeć skutecznej presji i rywal może swobodnie zagrać do przodu.</li>
+<li>Za LWB brakuje zabezpieczenia, a rywal może wykorzystać tę przestrzeń.</li>
+<li>Podanie do środka jest otwarte, a nasi partnerzy nie zdążą go zamknąć.</li>
+</ul>
+<p>Wtedy komunikujemy zagrożenie i chronimy przestrzeń. Nie wykonujemy samotnego doskoku tylko dlatego, że piłka trafiła na bok.</p>
+<h3>Kiedy przerywamy?</h3>
+<p>Jeżeli rywal wyjdzie z pułapki z kontrolą piłki i możliwością gry do przodu: najbliższy obrońca opóźnia akcję, pozostali wracają między piłkę a naszą bramkę i odbudowują ustawienie. Nie ścigamy piłki całą grupą.</p>
+<p>Podanie do tyłu nie oznacza automatycznie przerwania: odzyskujemy wspólne ustawienie i ponownie oceniamy możliwość nacisku.</p>
+<h3>Po udanym odbiorze</h3>
+<p>Sprawdź możliwość bezpiecznego zagrania do przodu. Jeśli jej nie ma, zabezpiecz piłkę i znajdź wsparcie. Szczegóły rozwiniemy w osobnym module „Po odbiorze”.</p>
+<h2>3. Moja pozycja — filtrowane zadania zawodników</h2>
+<p>W aplikacji domyślnie pokazujemy jedną wybraną rolę. Pełna tabela jest przeznaczona do redakcji i przeglądu sztabu.</p>
+<div class="table-wrap" role="region" aria-label="Tabela lekcji" tabindex="0"><table><thead><tr><th>Rola</th><th>Co obserwuję?</th><th>Co robię?</th><th>Czego unikam?</th></tr></thead><tbody>
+<tr><td>1 — bramkarz</td><td>Długie podanie, przestrzeń za linią obrony, ustawienie stoperów.</td><td>Dostosowuję pozycję do piłki i linii obrony. Informuję o biegu za plecy i jestem gotowy do interwencji.</td><td>Ustawienia na stałej wysokości niezależnie od presji na piłkę.</td></tr>
+<tr><td>3 — lewy stoper</td><td>Rywala za LWB i możliwość podania wzdłuż linii.</td><td>Przesuwam się w stronę piłki i zabezpieczam przestrzeń za LWB. Mogę wejść w pojedynek po podaniu do mojego sektora.</td><td>Doskoku do BO, jeśli LWB już go naciska i odsłoniłbym głębokość.</td></tr>
+<tr><td>5 — środkowy stoper</td><td>Napastnika i przestrzeń otwieraną przez przesunięcie 3.</td><td>Przesuwam się, zachowując ochronę środka i głębokości. Komunikuję ustawienie linii.</td><td>Skupienia całej uwagi na pułapce i zgubienia napastnika.</td></tr>
+<tr><td>2 — prawy stoper</td><td>Rywali w środku i możliwość diagonalnego podania.</td><td>Zawężam z linią obrony; kontroluję zawodnika i przestrzeń po dalszej stronie.</td><td>Pozostania szeroko bez związku z przesunięciem partnerów.</td></tr>
+<tr><td>LWB — lewy wahadłowy</td><td>Moment podania, przyjęcie BO oraz wsparcie 6 i 3.</td><td>Doskakuję podczas podania. Kontroluję tempo dojścia i ograniczam grę wzdłuż linii w stronę naszej bramki.</td><td>Wpadania w rywala, pochopnego wślizgu i zostawienia łatwego wyjścia pierwszym kontaktem.</td></tr>
+<tr><td>RWB — prawy wahadłowy</td><td>Rywala po dalszej stronie i możliwość zmiany strony.</td><td>Zawężam i dostosowuję wysokość do linii obrony. Utrzymuję możliwość reakcji na diagonalne podanie.</td><td>Patrzenia tylko na piłkę i porzucenia rywala po dalszej stronie.</td></tr>
+<tr><td>6 — bliższy środkowy pomocnik</td><td>Podanie od BO do środkowego pomocnika rywala.</td><td>Przesuwam się pod pułapkę, zamykam najbliższą drogę do środka i jestem gotowy do przechwytu lub drugiej piłki.</td><td>Dublowania nacisku LWB kosztem otwarcia centrum.</td></tr>
+<tr><td>8 — dalszy środkowy pomocnik</td><td>Drugiego rywala w środku i przestrzeń za przesuwającą się 6.</td><td>Przesuwam się razem z 6, utrzymując osłonę centrum i gotowość do drugiej piłki.</td><td>Podążania za 6 aż pod linię boczną.</td></tr>
+<tr><td>10 — bliższy półskrzydłowy</td><td>Linię podania BO → prawy stoper rywala.</td><td>Przesuwam się po łuku tak, żeby ograniczyć powrót do stopera, zachowując współpracę z LWB i 6.</td><td>Biegu prosto na BO, który otworzy podanie powrotne.</td></tr>
+<tr><td>9 — napastnik</td><td>Najgłębszego pomocnika rywala i możliwość wyjścia przez stoperów.</td><td>Dostosowuję pozycję do ruchu 10, utrudniam centralne wyjście i przygotowuję kolejny nacisk po podaniu do tyłu.</td><td>Dublowania 10 przy BO i pozostawienia wolnego środka.</td></tr>
+<tr><td>11 — dalszy półskrzydłowy</td><td>Dalszego pomocnika i możliwość przeniesienia gry.</td><td>Zawężam pierwszą linię, pomagam zamknąć centrum i przygotowuję reakcję na zmianę strony.</td><td>Przesunięcia aż pod piłkę, po którym rywal łatwo wyjdzie po dalszej stronie.</td></tr>
+</tbody></table></div>
+<h2>4. Współpraca — trzy poziomy</h2>
+<h3>Indywidualnie</h3>
+<p>Rozpoznaj sygnał, sprawdź partnera, wykonaj swoje zadanie. Kierunek i tempo ruchu wynikają z ustawienia rywala.</p>
+<h3>Grupowo</h3>
+<ul>
+<li>LWB + 10: nacisk na piłkę i ograniczenie podania powrotnego.</li>
+<li>LWB + 6: nacisk i zamknięcie najbliższego wyjścia do środka.</li>
+<li>LWB + 3: nacisk i zabezpieczenie przestrzeni za plecami.</li>
+<li>6 + 8: przesunięcie bez otwierania centrum.</li>
+</ul>
+<h3>Zespołowo</h3>
+<p>Przesuwamy formacje w stronę piłki, kontrolując głębokość i dalszą stronę. Wysokość linii obrony zależy również od tego, czy rywal jest pod skuteczną presją i czy może zagrać za plecy.</p>
+<h2>5. Wskazówki wykonania ruchu</h2>
+<p>Krótka, rozwijana sekcja zawodnika:</p>
+<ul>
+<li>Przyspiesz do doskoku, ale kontroluj ostatnie kroki przed rywalem.</li>
+<li>Ustaw ciało tak, żeby móc zareagować na pierwszy kontakt i zmianę kierunku.</li>
+<li>Po podaniu rywala odzyskaj pozycję do kolejnego działania.</li>
+</ul>
+<p>Uwagi dla sztabu: w tym module nie publikujemy norm dystansu, HSR, sprintów ani obciążeń treningowych. Czas animacji służy czytelności i nie jest normą czasu wykonania dla zawodnika. Wskazówki wykonania wymagają obserwacji na boisku; sam podgląd nie potwierdza jakości ruchu.</p>
+<h2>6. Pytania sprawdzające rozumienie</h2>
+<p>Nie są oceną zawodnika ani gotowym testem wdrożonym w aplikacji. Odpowiedź można pokazać po samodzielnym wyjaśnieniu decyzji.</p>
+<h3>Sytuacja 1 — brak asekuracji</h3>
+<p><strong>Pytanie:</strong> Jesteś LWB. Piłka zmierza do BO, ale 3 jest związany rywalem, a przestrzeń za Tobą pozostaje otwarta. Co sprawdzasz przed doskokiem?</p>
+<p><strong>Oczekiwane rozumienie:</strong> oceniam, czy ktoś przejął asekurację i czy zdążę nacisnąć piłkę. Bez warunków do wspólnej presji chronię przestrzeń i komunikuję zagrożenie. Sygnał podania nie zwalnia mnie z oceny sytuacji.</p>
+<h3>Sytuacja 2 — wszyscy przy piłce</h3>
+<p><strong>Pytanie:</strong> LWB naciska BO. Dlaczego 6 nie powinien automatycznie pobiec do tego samego zawodnika?</p>
+<p><strong>Oczekiwane rozumienie:</strong> 6 ma ograniczyć wyjście do środka. Może reagować na piłkę, jeśli sytuacja stworzy okazję do przechwytu, ale nie może bez oceny porzucić swojego zadania.</p>
+<h3>Sytuacja 3 — wyjście z pułapki</h3>
+<p><strong>Pytanie:</strong> Rywal podał do środka. Odbiorca obrócił się i może grać do przodu. Co zmienia się w naszym działaniu?</p>
+<p><strong>Oczekiwane rozumienie:</strong> najbliższy opóźnia akcję, pozostali chronią środek, głębokość i odbudowują ustawienie. Nie kontynuujemy mechanicznie poprzedniego doskoku.</p>
+<h2>7. Brief grafiki i animacji</h2>
+<h3>Wspólne zasady wizualne</h3>
+<p>Przygotuj schemat taktyczny, nie realistyczną ilustrację. Pełne boisko w poziomie; bramka Olimpii po lewej, bramka rywala po prawej. Olimpia atakuje w prawo. Górna linia boczna odpowiada lewej stronie Olimpii i prawej stronie rywala. Przez wszystkie klatki zachowaj tę orientację.</p>
+<p>Zielone koła: Olimpia, oznaczenia 1, 3, 5, 2, LWB, 6, 8, RWB, 10, 9, 11. Czerwone kwadraty: rywal w 1-4-3-3. Wyraźnie podpisz BO i SO po stronie pułapki oraz ŚP, PS i N; pozostałe role pokaż w kontekście całego ustawienia. Kształt i etykieta mają odróżniać zespoły także bez koloru.</p>
+<p>Oznacz piłkę kontrastowym kółkiem. Podanie: strzałka ciągła. Bieg: strzałka przerywana. Łuk pokazuje rzeczywisty tor biegu, a nie osobny ozdobny symbol. Półprzezroczysta strefa oznacza obszar ograniczanych możliwości gry. Legenda musi być dostępna. W końcowej klatce „Strata rywala” nie może zasłaniać piłki ani nazw zawodników.</p>
+<p>Pełny obraz pokazuje asekurację. Opcjonalne zbliżenie bocznego sektora nie zmienia pozycji zawodników. Układ jest schematyczny, nie służy wyliczaniu metrów ani prędkości.</p>
+<h3>Klatka 1 — zaproszenie</h3>
+<ul>
+<li>SO rywala ma piłkę w swojej prawej strefie budowania; jego BO pozostaje szeroko przy górnej linii bocznej, wyżej w kierunku bramki Olimpii.</li>
+<li>10, 9, 11 tworzą wąską pierwszą linię między piłką a centralnymi opcjami podania rywala. Zaznacz różne zadania, nie nakładaj trzech znaczników na tę samą linię.</li>
+<li>LWB znajduje się bliżej własnej bramki niż BO, z możliwością doskoku. 3 kontroluje PS za plecami LWB. 6 ma dostęp do bliższego ŚP, 8 osłania dalszy środek.</li>
+<li>5, 2, RWB i bramkarz utrzymują zabezpieczenie środka, głębokości i dalszej strony.</li>
+<li>Strzałka ciągła SO → BO wskazuje planowane podanie. Strzałka przerywana LWB → pozycja nacisku pokazuje planowany doskok.</li>
+<li>Podpis: „Zamknij środek. Przygotuj wspólny doskok.”</li>
+</ul>
+<h3>Przejście 1 → 2 — sygnał i przesunięcie</h3>
+<ul>
+<li>Piłka porusza się od SO do BO.</li>
+<li>LWB rusza podczas podania; docelowe ustawienie ogranicza grę BO wzdłuż górnej linii w stronę bramki Olimpii.</li>
+<li>10 biegnie po łuku w stronę korytarza podania BO → SO i kończy ruch w pozycji ograniczającej powrót. Nie kończy na tym samym punkcie co LWB.</li>
+<li>9 dostosowuje pozycję bliżej strony piłki, zachowując wpływ na centrum; 11 zawęża dalszą stronę pierwszej linii.</li>
+<li>6 przesuwa się do wewnętrznego wyjścia BO, 8 osłania przestrzeń za przesunięciem 6.</li>
+<li>3 przesuwa się w górny sektor za LWB, pozostając odpowiedzialny za głębszego rywala. 5 i 2 przesuwają linię; RWB zawęża i dostosowuje wysokość. Bramkarz reaguje na zmianę ustawienia zespołu.</li>
+<li>Podpis: „Piłka w drodze — każdy zamyka swoje wyjście.”</li>
+</ul>
+<h3>Klatka 2 → 3 — kontrola i przykładowy odbiór</h3>
+<ul>
+<li>BO wykonuje zbyt długi pierwszy kontakt: piłka oddala się od niego w stronę dostępnego dla LWB pojedynku.</li>
+<li>LWB skraca dystans do piłki. 10 i 6 korygują ustawienie zgodnie z liniami podań, a nie tylko z odległością od piłki. 3 nadal zabezpiecza PS i głębokość.</li>
+<li>Strefa obejmuje obszar pułapki między linią boczną a wewnętrzną osłoną 6. Może obejmować pozycje 10 i 3, ale nie sugeruje, że wszyscy stoją w równym pierścieniu wokół BO.</li>
+<li>Napis „#KLATKA” umieść nad strefą. Symbol i etykietę „Strata rywala — przykład” pokaż dopiero przy przejęciu piłki. Po przejęciu piłka znajduje się pod kontrolą LWB.</li>
+<li>Podpis: „Wykorzystaj błąd. Utrzymaj asekurację.”</li>
+</ul>
+<h3>Czas — jednoznaczny kontrakt dla programisty</h3>
+<ul>
+<li>Ruch 1 → 2: 2,0 s.</li>
+<li>Ruch 2 → 3: 1,5 s.</li>
+<li>Zatrzymanie na klatce 3: 2,0 s.</li>
+<li>Łączny cykl: 5,5 s. Odtwarzanie domyślnie jednokrotne; powtórzenie uruchamia zawodnik.</li>
+<li>Te wartości opisują tempo demonstracji, nie czas działania w meczu.</li>
+<li>Jeśli silnik nie obsługuje łuku, dodaj punkty pośrednie wewnątrz przejścia 1 → 2, bez tworzenia dodatkowego etapu dydaktycznego.</li>
+</ul>
+<h3>Alternatywna plansza „Nie ma warunków”</h3>
+<p>Osobna statyczna plansza pod przyciskiem „Kiedy nie ruszać?”. Zachowaj geometrię klatki 1, pokaż otwartą przestrzeń za LWB i brak dostępnej asekuracji 3. Wyróżnij drogę podania BO do PS. Podpis: „Bez wsparcia nie uruchamiaj samotnego doskoku.” Ta plansza nie jest czwartą klatką głównej animacji.</p>
+<h2>8. Układ lekcji w aplikacji</h2>
+<ol>
+<li>Nawigacja: Bez piłki → Pressing zorganizowany → #KLATKA.</li>
+<li>Tytuł, cel i jedno zdanie do zapamiętania.</li>
+<li>Wybrana rola; możliwość zmiany roli bez przeładowania lekcji.</li>
+<li>Boisko: Odtwórz / Pauza / Od początku, trzy wybieralne etapy, opcja „Pokaż cały zespół”.</li>
+<li>Zadanie wybranej roli: obserwuję / działam / unikam.</li>
+<li>Rozwijane „Kto mnie asekuruje?” i „Kiedy przerywamy?”.</li>
+<li>Jedna sytuacja do wyjaśnienia; ujawnienie wskazówki dopiero na żądanie.</li>
+</ol>
+<p>Na telefonie nawigacja i przyciski nie mogą zasłaniać boiska. Tekst i statyczne etapy muszą być użyteczne również bez animacji. Materiały robocze i metadane akceptacji pozostają poza widokiem zawodnika.</p></article><nav class="lesson-nav" aria-label="Kolejność lekcji"><a href="O03.html">← O03 · Poprzednia lekcja</a><a href="O05.html">O05 · Następna lekcja →</a></nav><footer>Rozumiej grę. Działaj razem. · Model gry Olimpii</footer></main></body></html>

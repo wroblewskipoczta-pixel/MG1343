@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "fundamenty.ustawienie-ciala-w-ataku-i-obronie",
+  "code": "F02",
+  "title": "Ustawienie ciała w ataku i obronie",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "fundamenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "ustawienie-do-kontynuacji",
+      "label": "Ustawienie do kontynuacji"
+    },
+    {
+      "id": "oslona-i-wspolpraca",
+      "label": "Osłona i współpraca"
+    },
+    {
+      "id": "ochrona-i-reakcja",
+      "label": "Ochrona kierunku i reakcja"
+    },
+    {
+      "id": "aktualizacja-ustawienia",
+      "label": "Aktualizacja ustawienia"
+    }
+  ],
+  "actions": [
+    {
+      "id": "F02.D01",
+      "title": "Przygotuj ustawienie do przyjęcia i kontynuacji",
+      "principleIds": [
+        "ustawienie-do-kontynuacji"
+      ],
+      "visualId": "F02.G01",
+      "videoClips": []
+    },
+    {
+      "id": "F02.D02",
+      "title": "Osłoń piłkę i zachowaj możliwość współpracy",
+      "principleIds": [
+        "oslona-i-wspolpraca"
+      ],
+      "visualId": "F02.G02",
+      "videoClips": []
+    },
+    {
+      "id": "F02.D03",
+      "title": "Ustaw się do ochrony kierunku i reakcji w obronie",
+      "principleIds": [
+        "ochrona-i-reakcja"
+      ],
+      "visualId": "F02.G03",
+      "videoClips": []
+    },
+    {
+      "id": "F02.D04",
+      "title": "Zmień ustawienie po działaniu lub zmianie sytuacji",
+      "principleIds": [
+        "aktualizacja-ustawienia"
+      ],
+      "visualId": "F02.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08",
+    "A09",
+    "P01",
+    "S01"
+  ],
+  "automaticCompletion": false,
+  "nextStep": {
+    "lessonCode": "F03",
+    "task": "review-existing-content"
+  },
+  "nextNewLesson": "F04"
+}

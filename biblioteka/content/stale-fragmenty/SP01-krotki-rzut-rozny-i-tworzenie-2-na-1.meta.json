@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "stale-fragmenty.krotki-rzut-rozny-i-tworzenie-2-na-1",
+  "code": "SP01",
+  "title": "Krótki rzut rożny i tworzenie 2×1",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "stale-fragmenty",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "provenance": "new-iteration-draft",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "SP01.principle.01",
+      "label": "Rozpoznaj warunki krótkiego rozegrania"
+    },
+    {
+      "id": "SP01.principle.02",
+      "label": "Utwórz dostępne pierwsze podanie i nowy kąt"
+    },
+    {
+      "id": "SP01.principle.03",
+      "label": "Wykorzystaj wybór obrońcy"
+    },
+    {
+      "id": "SP01.principle.04",
+      "label": "Po uzyskaniu przewagi wybierz kontynuację i utrzymaj zabezpieczenie"
+    }
+  ],
+  "actions": [
+    {
+      "id": "SP01.D01",
+      "title": "Rozpoznaj warunki krótkiego rozegrania",
+      "principleIds": [
+        "SP01.principle.01"
+      ],
+      "visualId": "SP01.G01",
+      "videoClips": []
+    },
+    {
+      "id": "SP01.D02",
+      "title": "Utwórz dostępne pierwsze podanie i nowy kąt",
+      "principleIds": [
+        "SP01.principle.02"
+      ],
+      "visualId": "SP01.G02",
+      "videoClips": []
+    },
+    {
+      "id": "SP01.D03",
+      "title": "Wykorzystaj wybór obrońcy",
+      "principleIds": [
+        "SP01.principle.03"
+      ],
+      "visualId": "SP01.G03",
+      "videoClips": []
+    },
+    {
+      "id": "SP01.D04",
+      "title": "Po uzyskaniu przewagi wybierz kontynuację i utrzymaj zabezpieczenie",
+      "principleIds": [
+        "SP01.principle.04"
+      ],
+      "visualId": "SP01.G04",
+      "videoClips": []
+    }
+  ],
+  "automaticCompletion": false,
+  "contentPath": "content/stale-fragmenty/SP01-krotki-rzut-rozny-i-tworzenie-2-na-1.md",
+  "packageVersion": "1.0.0",
+  "nextLesson": "SP02",
+  "contentModel": "actions",
+  "relatedLessons": []
+}

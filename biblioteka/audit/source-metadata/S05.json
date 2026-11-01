@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-stracie.przerwanie-kontrpressingu-i-odbudowa",
+  "code": "S05",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-stracie",
+  "title": "Przerwanie kontrpressingu i odbudowa niskiego bloku",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "lowBlockFormation": null,
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "ocena-warunkow-presji",
+      "label": "Ocena warunków presji"
+    },
+    {
+      "id": "podzial-odpowiedzialnosci",
+      "label": "Podział odpowiedzialności"
+    },
+    {
+      "id": "ochrona-centrum",
+      "label": "Ochrona centrum"
+    },
+    {
+      "id": "ochrona-glebokosci",
+      "label": "Ochrona głębokości"
+    },
+    {
+      "id": "odbudowa-organizacji",
+      "label": "Odbudowa organizacji"
+    }
+  ],
+  "actions": [
+    {
+      "id": "S05.D01",
+      "title": "Rozpoznaj koniec kontrpressingu",
+      "principleIds": [
+        "ocena-warunkow-presji"
+      ],
+      "visualId": "S05.G01",
+      "videoClips": []
+    },
+    {
+      "id": "S05.D02",
+      "title": "Podziel opóźnianie i powrót",
+      "principleIds": [
+        "podzial-odpowiedzialnosci",
+        "ochrona-centrum"
+      ],
+      "visualId": "S05.G02",
+      "videoClips": []
+    },
+    {
+      "id": "S05.D03",
+      "title": "Wróć do zadania i połącz formacje",
+      "principleIds": [
+        "ochrona-centrum",
+        "ochrona-glebokosci",
+        "odbudowa-organizacji"
+      ],
+      "visualId": "S05.G03",
+      "videoClips": []
+    },
+    {
+      "id": "S05.D04",
+      "title": "Ustal blok i przejdź do wspólnego bronienia",
+      "principleIds": [
+        "odbudowa-organizacji",
+        "podzial-odpowiedzialnosci"
+      ],
+      "visualId": "S05.G04",
+      "videoClips": []
+    }
+  ],
+  "videoClipFields": [
+    "id",
+    "actionId",
+    "scenarioId",
+    "sourceType",
+    "assetPathOrUrl",
+    "startSeconds",
+    "endSeconds",
+    "caption"
+  ],
+  "relatedLessons": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "A09",
+    "F03",
+    "O01",
+    "O08",
+    "P01",
+    "P02"
+  ],
+  "automaticCompletion": false
+}

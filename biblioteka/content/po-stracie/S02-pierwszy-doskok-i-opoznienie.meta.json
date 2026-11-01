@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-stracie.pierwszy-doskok-i-opoznienie",
+  "code": "S02",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-stracie",
+  "title": "Pierwszy doskok i opóźnienie ataku rywala",
+  "audience": "olimpia-zespol",
+  "principlesScope": "universal",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "scopeApproved": true,
+  "contentApproved": true,
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "approvedBy": "Łukasz Wróblewski",
+  "approvalBasis": "Akceptacje zakresu, D01–D04 oraz zamknięcia lekcji w rozmowie",
+  "actions": [
+    {
+      "id": "S02.D01",
+      "title": "Wybierz kierunek dojścia",
+      "visualId": "S02.G01",
+      "videoClips": []
+    },
+    {
+      "id": "S02.D02",
+      "title": "Kontroluj tempo i ustawienie ciała",
+      "visualId": "S02.G02",
+      "videoClips": []
+    },
+    {
+      "id": "S02.D03",
+      "title": "Wybierz moment odbioru",
+      "visualId": "S02.G03",
+      "videoClips": []
+    },
+    {
+      "id": "S02.D04",
+      "title": "Opóźniaj, gdy odbiór nie jest dostępny",
+      "visualId": "S02.G04",
+      "videoClips": []
+    }
+  ],
+  "relatedLessons": [
+    "F02",
+    "F03",
+    "F07",
+    "F09",
+    "A09",
+    "S01",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "automaticCompletion": false,
+  "contentPath": "content/po-stracie/S02-pierwszy-doskok-i-opoznienie.md",
+  "packageVersion": "1.0.0",
+  "nextLesson": "S03",
+  "contentModel": "actions"
+}

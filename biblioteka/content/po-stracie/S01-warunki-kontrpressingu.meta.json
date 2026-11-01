@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-stracie.warunki-kontrpressingu",
+  "code": "S01",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-stracie",
+  "title": "Rozpoznanie warunków do kontrpressingu",
+  "audience": "olimpia-zespol",
+  "principlesScope": "universal",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "scopeApproved": true,
+  "contentApproved": true,
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "approvedBy": "Łukasz Wróblewski",
+  "approvalBasis": "Akceptacje D01–D03 oraz zamknięcia lekcji w rozmowie",
+  "actions": [
+    {
+      "id": "S01.D01",
+      "title": "Oceń możliwość nacisku na piłkę",
+      "visualId": "S01.G01",
+      "videoClips": []
+    },
+    {
+      "id": "S01.D02",
+      "title": "Sprawdź wsparcie i zabezpieczenie",
+      "visualId": "S01.G02",
+      "videoClips": []
+    },
+    {
+      "id": "S01.D03",
+      "title": "Rozpoznaj wspólną decyzję",
+      "visualId": "S01.G03",
+      "videoClips": []
+    }
+  ],
+  "commands": [
+    "Razem!",
+    "Odbuduj!",
+    "Środek!",
+    "Plecy!"
+  ],
+  "relatedLessons": [
+    "A09",
+    "F03",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "P02",
+    "P05"
+  ],
+  "automaticCompletion": false,
+  "contentPath": "content/po-stracie/S01-warunki-kontrpressingu.md",
+  "packageVersion": "1.0.0",
+  "nextLesson": "S02",
+  "contentModel": "actions"
+}

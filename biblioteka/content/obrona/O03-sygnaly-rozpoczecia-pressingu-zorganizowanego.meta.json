@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "obrona.sygnaly-rozpoczecia-pressingu-zorganizowanego",
+  "code": "O03",
+  "title": "Sygnały rozpoczęcia pressingu zorganizowanego",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "obrona",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "opponentAttackDirection": "top-to-bottom",
+  "principles": [
+    {
+      "id": "O03.P01",
+      "label": "Połącz sygnał z gotowością"
+    },
+    {
+      "id": "O03.P02",
+      "label": "Dopasuj pierwszy nacisk do osłony"
+    },
+    {
+      "id": "O03.P03",
+      "label": "Kontroluj kolejne wyjścia"
+    },
+    {
+      "id": "O03.P04",
+      "label": "Aktualizuj kontynuację lub odbudowę"
+    }
+  ],
+  "actions": [
+    {
+      "id": "O03.D01",
+      "title": "Rozpoznaj warunki nacisku",
+      "principleIds": [
+        "O03.P01"
+      ],
+      "visualId": "O03.G01",
+      "videoClips": []
+    },
+    {
+      "id": "O03.D02",
+      "title": "Uzgodnij tor pierwszego doskoku",
+      "principleIds": [
+        "O03.P02"
+      ],
+      "visualId": "O03.G02",
+      "videoClips": []
+    },
+    {
+      "id": "O03.D03",
+      "title": "Zamknij dostępne wyjścia",
+      "principleIds": [
+        "O03.P03"
+      ],
+      "visualId": "O03.G03",
+      "videoClips": []
+    },
+    {
+      "id": "O03.D04",
+      "title": "Kontynuuj albo odbuduj",
+      "principleIds": [
+        "O03.P04"
+      ],
+      "visualId": "O03.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F07",
+    "F08",
+    "F09",
+    "O01",
+    "O02",
+    "O04",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "P01"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "O04",
+  "contentPath": "content/obrona/O03-sygnaly-rozpoczecia-pressingu-zorganizowanego.md",
+  "packageVersion": "1.0.0",
+  "contentModel": "actions"
+}

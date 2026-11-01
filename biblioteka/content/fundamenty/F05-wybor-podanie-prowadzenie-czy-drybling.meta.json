@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "fundamenty.wybor-podanie-prowadzenie-czy-drybling",
+  "code": "F05",
+  "title": "Wybór: podanie, prowadzenie czy drybling",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "fundamenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "rozpoznanie-przewagi",
+      "label": "Rozpoznanie przewagi"
+    },
+    {
+      "id": "uzyteczne-podanie",
+      "label": "Użyteczna kontynuacja po podaniu"
+    },
+    {
+      "id": "prowadzenie-i-reakcja",
+      "label": "Prowadzenie i reakcja przeciwnika"
+    },
+    {
+      "id": "pojedynek-i-kontynuacja",
+      "label": "Pojedynek i kontynuacja"
+    }
+  ],
+  "actions": [
+    {
+      "id": "F05.D01",
+      "title": "Rozpoznaj przewagę i porównaj dostępne rozwiązania",
+      "principleIds": [
+        "rozpoznanie-przewagi"
+      ],
+      "visualId": "F05.G01",
+      "videoClips": []
+    },
+    {
+      "id": "F05.D02",
+      "title": "Podaj, gdy partner daje użyteczną kontynuację",
+      "principleIds": [
+        "uzyteczne-podanie"
+      ],
+      "visualId": "F05.G02",
+      "videoClips": []
+    },
+    {
+      "id": "F05.D03",
+      "title": "Prowadź, aby wykorzystać przestrzeń lub wywołać reakcję",
+      "principleIds": [
+        "prowadzenie-i-reakcja"
+      ],
+      "visualId": "F05.G03",
+      "videoClips": []
+    },
+    {
+      "id": "F05.D04",
+      "title": "Wybierz drybling i aktualizuj decyzję w pojedynku",
+      "principleIds": [
+        "pojedynek-i-kontynuacja"
+      ],
+      "visualId": "F05.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F04",
+    "F06",
+    "A03",
+    "A07",
+    "A08",
+    "A09",
+    "P02",
+    "P03",
+    "P04",
+    "P05"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "F06",
+  "contentPath": "content/fundamenty/F05-wybor-podanie-prowadzenie-czy-drybling.md",
+  "packageVersion": "1.0.0",
+  "contentModel": "actions"
+}

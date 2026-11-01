@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "fundamenty.pojedynek-obronny-dojscie-kierunkowanie-odbior",
+  "code": "F07",
+  "title": "Pojedynek obronny: dojście, kierunkowanie, odbiór",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "fundamenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "dojscie-z-kontrola",
+      "label": "Dojście z kontrolą"
+    },
+    {
+      "id": "kierunkowanie-i-opoznianie",
+      "label": "Kierunkowanie i opóźnianie"
+    },
+    {
+      "id": "moment-interwencji",
+      "label": "Moment interwencji"
+    },
+    {
+      "id": "reakcja-po-pojedynku",
+      "label": "Reakcja po działaniu"
+    }
+  ],
+  "actions": [
+    {
+      "id": "F07.D01",
+      "title": "Rozpoznaj zagrożenie i dobierz dojście",
+      "principleIds": [
+        "dojscie-z-kontrola"
+      ],
+      "visualId": "F07.G01",
+      "videoClips": []
+    },
+    {
+      "id": "F07.D02",
+      "title": "Kierunkuj i opóźniaj zgodnie z asekuracją",
+      "principleIds": [
+        "kierunkowanie-i-opoznianie"
+      ],
+      "visualId": "F07.G02",
+      "videoClips": []
+    },
+    {
+      "id": "F07.D03",
+      "title": "Wybierz moment próby odbioru",
+      "principleIds": [
+        "moment-interwencji"
+      ],
+      "visualId": "F07.G03",
+      "videoClips": []
+    },
+    {
+      "id": "F07.D04",
+      "title": "Zareaguj po interwencji, minięciu lub podaniu",
+      "principleIds": [
+        "reakcja-po-pojedynku"
+      ],
+      "visualId": "F07.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F08",
+    "F09",
+    "S02",
+    "O04",
+    "P01"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "F08"
+}

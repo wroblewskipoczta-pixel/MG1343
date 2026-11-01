@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-odbiorze.progresja-do-9-10-11-po-odbiorze",
+  "code": "P02",
+  "title": "Progresja do 9–10–11 po odbiorze",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-odbiorze",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "provenance": "editorial-reconstruction",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "P02.principle.01",
+      "label": "Wybierz odbiorcę i kierunek podania"
+    },
+    {
+      "id": "P02.principle.02",
+      "label": "Dopasuj ruch do piłki lub za linię"
+    },
+    {
+      "id": "P02.principle.03",
+      "label": "Wybierz kontynuację po przyjęciu"
+    },
+    {
+      "id": "P02.principle.04",
+      "label": "Wykorzystaj trzeciego zawodnika lub zmień rozwiązanie"
+    }
+  ],
+  "actions": [
+    {
+      "id": "P02.D01",
+      "title": "Wybierz odbiorcę i kierunek podania",
+      "principleIds": [
+        "P02.principle.01"
+      ],
+      "visualId": "P02.G01",
+      "videoClips": []
+    },
+    {
+      "id": "P02.D02",
+      "title": "Dopasuj ruch do piłki lub za linię",
+      "principleIds": [
+        "P02.principle.02"
+      ],
+      "visualId": "P02.G02",
+      "videoClips": []
+    },
+    {
+      "id": "P02.D03",
+      "title": "Wybierz kontynuację po przyjęciu",
+      "principleIds": [
+        "P02.principle.03"
+      ],
+      "visualId": "P02.G03",
+      "videoClips": []
+    },
+    {
+      "id": "P02.D04",
+      "title": "Wykorzystaj trzeciego zawodnika lub zmień rozwiązanie",
+      "principleIds": [
+        "P02.principle.04"
+      ],
+      "visualId": "P02.G04",
+      "videoClips": []
+    }
+  ],
+  "automaticCompletion": false,
+  "contentPath": "content/po-odbiorze/P02-progresja-do-9-10-11-po-odbiorze.md",
+  "packageVersion": "1.0.0",
+  "nextLesson": "P03",
+  "contentModel": "actions",
+  "relatedLessons": []
+}

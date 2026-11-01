@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "stale-fragmenty.obrona-rzutow-wolnych-i-autow",
+  "code": "SP06",
+  "title": "Obrona rzutów wolnych i autów",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "stale-fragmenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "opponentAttackDirection": "top-to-bottom",
+  "principles": [
+    {
+      "id": "SP06.P01",
+      "label": "Rozpoznaj główną i alternatywną drogę zagrożenia"
+    },
+    {
+      "id": "SP06.P02",
+      "label": "Połącz nacisk z ochroną bramki i odbiorców"
+    },
+    {
+      "id": "SP06.P03",
+      "label": "Aktualizuj reakcję po zmianie kierunku"
+    },
+    {
+      "id": "SP06.P04",
+      "label": "Osłoń następny kontakt i rozpoznaj kolejną fazę"
+    }
+  ],
+  "actions": [
+    {
+      "id": "SP06.D01",
+      "title": "Rozpoznaj rodzaj zagrożenia",
+      "principleIds": [
+        "SP06.P01"
+      ],
+      "visualId": "SP06.G01",
+      "videoClips": []
+    },
+    {
+      "id": "SP06.D02",
+      "title": "Uzgodnij ochronę bramki i odbiorców",
+      "principleIds": [
+        "SP06.P02"
+      ],
+      "visualId": "SP06.G02",
+      "videoClips": []
+    },
+    {
+      "id": "SP06.D03",
+      "title": "Reaguj na krótkie lub dalsze zagranie",
+      "principleIds": [
+        "SP06.P03"
+      ],
+      "visualId": "SP06.G03",
+      "videoClips": []
+    },
+    {
+      "id": "SP06.D04",
+      "title": "Zabezpiecz drugi kontakt",
+      "principleIds": [
+        "SP06.P04"
+      ],
+      "visualId": "SP06.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F07",
+    "F08",
+    "F09",
+    "O02",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "P01",
+    "SP03",
+    "SP04",
+    "SP05",
+    "SP07"
+  ],
+  "rulesCheckedOn": "2026-11-01",
+  "rulesSources": [
+    "https://theifab.com/laws/latest/free-kicks/",
+    "https://www.theifab.com/laws/latest/the-throw-in/",
+    "https://www.theifab.com/laws/latest/offside/"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "SP07",
+  "nextAuthoringLesson": "SP07"
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "stale-fragmenty.auty-utrzymanie-progresja-i-uwolnienie-zawodnika",
+  "code": "SP04",
+  "title": "Auty — utrzymanie, progresja i uwolnienie zawodnika",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "stale-fragmenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "opponentAttackDirection": "top-to-bottom",
+  "principles": [
+    {
+      "id": "SP04.P01",
+      "label": "Oceń presję i możliwości odbiorcy"
+    },
+    {
+      "id": "SP04.P02",
+      "label": "Ruchem twórz różne dostępne opcje"
+    },
+    {
+      "id": "SP04.P03",
+      "label": "Dopasuj wrzut do dalszego działania"
+    },
+    {
+      "id": "SP04.P04",
+      "label": "Po wznowieniu utrzymaj współpracę i osłonę"
+    }
+  ],
+  "actions": [
+    {
+      "id": "SP04.D01",
+      "title": "Rozpoznaj presję przy linii",
+      "principleIds": [
+        "SP04.P01"
+      ],
+      "visualId": "SP04.G01",
+      "videoClips": []
+    },
+    {
+      "id": "SP04.D02",
+      "title": "Przygotuj ruch odbiorcy",
+      "principleIds": [
+        "SP04.P02"
+      ],
+      "visualId": "SP04.G02",
+      "videoClips": []
+    },
+    {
+      "id": "SP04.D03",
+      "title": "Wybierz kierunek wznowienia",
+      "principleIds": [
+        "SP04.P03"
+      ],
+      "visualId": "SP04.G03",
+      "videoClips": []
+    },
+    {
+      "id": "SP04.D04",
+      "title": "Wspieraj kolejny kontakt",
+      "principleIds": [
+        "SP04.P04"
+      ],
+      "visualId": "SP04.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F09",
+    "A02",
+    "A05",
+    "A06",
+    "A09",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "SP06",
+    "SP07"
+  ],
+  "rulesCheckedOn": "2026-11-01",
+  "rulesSources": [
+    "https://www.theifab.com/laws/latest/the-throw-in/",
+    "https://www.theifab.com/laws/latest/offside/",
+    "https://theifab.com/laws/latest/throw-in-and-goal-kick-countdown-protocol/"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "SP05",
+  "contentPath": "content/stale-fragmenty/SP04-auty-utrzymanie-progresja-i-uwolnienie-zawodnika.md",
+  "packageVersion": "1.0.0",
+  "contentModel": "actions"
+}

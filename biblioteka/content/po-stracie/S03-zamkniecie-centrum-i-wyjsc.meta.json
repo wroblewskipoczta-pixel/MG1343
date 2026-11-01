@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-stracie.zamkniecie-centrum-i-wyjsc",
+  "code": "S03",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-stracie",
+  "title": "Zamknięcie centrum i najbliższych wyjść",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "scopeApproved": true,
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-development",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "ochrona-centrum",
+      "label": "Ochrona centrum"
+    },
+    {
+      "id": "podzial-odpowiedzialnosci",
+      "label": "Podział odpowiedzialności"
+    },
+    {
+      "id": "aktualizacja-po-podaniu",
+      "label": "Aktualizacja po podaniu"
+    },
+    {
+      "id": "asekuracja-nacisku",
+      "label": "Asekuracja nacisku"
+    }
+  ],
+  "actions": [
+    {
+      "id": "S03.D01",
+      "title": "Zamknij pierwsze podanie do centrum",
+      "principleIds": [
+        "ochrona-centrum"
+      ],
+      "visualId": "S03.G01",
+      "videoClips": []
+    },
+    {
+      "id": "S03.D02",
+      "title": "Podziel kontrolę najbliższych wyjść",
+      "principleIds": [
+        "ochrona-centrum",
+        "podzial-odpowiedzialnosci"
+      ],
+      "visualId": "S03.G02",
+      "videoClips": []
+    },
+    {
+      "id": "S03.D03",
+      "title": "Dostosuj zadanie po podaniu rywala",
+      "principleIds": [
+        "aktualizacja-po-podaniu",
+        "podzial-odpowiedzialnosci"
+      ],
+      "visualId": "S03.G03",
+      "videoClips": []
+    },
+    {
+      "id": "S03.D04",
+      "title": "Kontroluj wsparcie za naciskającymi",
+      "principleIds": [
+        "asekuracja-nacisku",
+        "ochrona-centrum"
+      ],
+      "visualId": "S03.G04",
+      "videoClips": []
+    }
+  ],
+  "videoClipFields": [
+    "id",
+    "actionId",
+    "scenarioId",
+    "sourceType",
+    "assetPathOrUrl",
+    "startSeconds",
+    "endSeconds",
+    "caption"
+  ],
+  "relatedLessons": [
+    "F03",
+    "F08",
+    "F09",
+    "A09",
+    "S01",
+    "S02",
+    "S04",
+    "S05"
+  ],
+  "automaticCompletion": false,
+  "contentPath": "content/po-stracie/S03-zamkniecie-centrum-i-wyjsc.md",
+  "packageVersion": "1.0.0",
+  "nextLesson": "S04",
+  "contentModel": "actions"
+}

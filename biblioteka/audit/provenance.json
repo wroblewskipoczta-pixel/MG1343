@@ -1,0 +1,522 @@
+[
+  {
+    "code": "F01",
+    "sourcePath": "F01-skanowanie-i-zbieranie-informacji.md",
+    "sourceSha256": "c77556b1d753a9861aedd94781dab9b8080f07f0aa489d272e483d34bc9b0386",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "5fb9fa0ba695a73bd87206b5c81ab09be19357b38144f65c88295552a7f12711",
+    "originalMetadataPath": "audit/source-metadata/F01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F02",
+    "sourcePath": "F02-ustawienie-ciala-w-ataku-i-obronie.md",
+    "sourceSha256": "3fb6da5727a73040bddc3b227a73d4d3aac055663628b5b70a495ea065a410ff",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "3c2747584f2f22d91bd36ce52dd4702ac084a95b36d7fbdae80200cecb6f3050",
+    "originalMetadataPath": "audit/source-metadata/F02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F03",
+    "sourcePath": "F03-pilka-otwarta-zamknieta.md",
+    "sourceSha256": "e5d93dfb15283734a2933920012ccde105994472ac858e988afdf2717a89a734",
+    "contentVersion": "1.1.0",
+    "packagedSha256": "be500b10bedc9d34416bc10d162f656c1a8889da9a6062d37553f7b86f541090",
+    "originalMetadataPath": "audit/source-metadata/F03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznego licznika postępu"
+    ]
+  },
+  {
+    "code": "F04",
+    "sourcePath": "F04-przyjecie-kierunkowe-i-pierwszy-kontakt.md",
+    "sourceSha256": "9e4844297489614afdf2c88fa2c53da105fef714c19c48896915698c21fd2e01",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "0520c5bb750a636f933966f805f2c061426ed5722fe67188d03bf9dbfcb82bc6",
+    "originalMetadataPath": "audit/source-metadata/F04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F05",
+    "sourcePath": "F05-wybor-podanie-prowadzenie-czy-drybling.md",
+    "sourceSha256": "77b895642a5663dbde3219ee9d568772c2b7a0fbae5ef5cc3b4ca49bea5ad4a4",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "aa8f8ef58ae379be215bb69f57cd0775f73094b06c99c2040a89a39e8b72f9e9",
+    "originalMetadataPath": "audit/source-metadata/F05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F06",
+    "sourcePath": "F06-tworzenie-linii-podania-i-wsparcia.md",
+    "sourceSha256": "4f796bb7831675399fc5fa5de1b2a671bc885134baf2b72eb801b0ee73c93eeb",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "811219a7785c7abe9777b73cfdb3b7f383ee7f8f2af3f462af7985fd8861ffe2",
+    "originalMetadataPath": "audit/source-metadata/F06.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F07",
+    "sourcePath": "F07-pojedynek-obronny-dojscie-kierunkowanie-odbior.md",
+    "sourceSha256": "64ecc7ebc339d59c8467d1003edf611b7024e746af838b393d17c9ac00403476",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "e16b5d6bac7aba1cce575ef125159c899d4cef773df3f3d2467177017e4b1579",
+    "originalMetadataPath": "audit/source-metadata/F07.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F08",
+    "sourcePath": "F08-krycie-przekazywanie-i-kontrola-biegu-rywala.md",
+    "sourceSha256": "5135e5438cb297b2c95f38d6ff5e8008f3279f421ca1c5bd3612390abcc075f7",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "704e20b508b1c16dd3ba6887803d9fa466da12d565cf93c34e60d1f461028822",
+    "originalMetadataPath": "audit/source-metadata/F08.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "F09",
+    "sourcePath": "F09-asekuracja-odleglosci-i-komunikacja.md",
+    "sourceSha256": "d4bfc21f72309228e02a74cbb15f9a946ed1f6e4b318401047e7ce2d64e248a6",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "e3e1414474f98e877f5cfbaa518d075263842e736d77456929ac1963c5f2a4cd",
+    "originalMetadataPath": "audit/source-metadata/F09.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A01",
+    "sourcePath": "A01-otwarcie-od-bramkarza.md",
+    "sourceSha256": "d1a8493392dea8ca701d319b8c3afc2473a902efb99dff125bdc53753e088910",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "6f12677236f8a3f70d231d5cb38a1ebef44a4cf38bad199f28b18411be710ac9",
+    "originalMetadataPath": "audit/source-metadata/A01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A02",
+    "sourcePath": "A02-wyjscie-spod-pressingu.md",
+    "sourceSha256": "9af36e98c2758c22f1422b9adbaba290864f910d6f6886df303f9d1d176644ba",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "5ba26df09bffd5ac414511216727d507a214a56a1a10a0b3dcd2d69613c32264",
+    "originalMetadataPath": "audit/source-metadata/A02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A03",
+    "sourcePath": "A03-przyciaganie-przeciwnika-i-uwalnianie-przestrzeni.md",
+    "sourceSha256": "21b818bda7456a3c018d2e70f1af8dc1fcc13761d4477cc04dc35bfc11788b25",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "7e003d60026cd247e080954ea0242299aff612ea61c2c7c77eb5ce2fc42e8724",
+    "originalMetadataPath": "audit/source-metadata/A03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A04",
+    "sourcePath": "A04-progresja-przez-srodek.md",
+    "sourceSha256": "8a70e7b46ff98897db7ddcdcd7792685c4b25965ce840af8b22b5cb5fcb2f234",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "31a5faa4c83d2cc66501deae437f7a014499fd2fa59cf85cbac1122213f86ce2",
+    "originalMetadataPath": "audit/source-metadata/A04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A05",
+    "sourcePath": "A05-progresja-bokiem-i-tworzenie-2-na-1.md",
+    "sourceSha256": "b8060a73ec711481fb1f6d0ab230a6c104b2a17c3a03bb3018ac8662b5673fea",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "d3431d1448c78be9740a2edc00004983fb5d38b08d678746066f6d1dafe49c6e",
+    "originalMetadataPath": "audit/source-metadata/A05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A06",
+    "sourcePath": "A06-zmiana-strony-ataku.md",
+    "sourceSha256": "513b41d1a896d53020e04f6ea5523140107ccbf6b971466c8664148d4fa7dcd7",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "2fe726638bfe5aba53f87a49d1634ce780fa611cd615f356e9b4bc55ac3a0f86",
+    "originalMetadataPath": "audit/source-metadata/A06.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A07",
+    "sourcePath": "A07-przyspieszenie-po-przelamaniu-linii.md",
+    "sourceSha256": "06c4dab463250335fd9b9528bb389a178d2623017d5fe194c72c0c784b059c74",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "eba74dca63ffd0281271c28f2a471a27ebae61839942050ce43612664170a4da",
+    "originalMetadataPath": "audit/source-metadata/A07.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A08",
+    "sourcePath": "A08-wejscie-w-pole-karne-i-finalizacja.md",
+    "sourceSha256": "36ec01baf51095109c4e1ab757283ac261677be5ba52b9e619f59d5bde6a2a48",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "90f8592178cbae5d0554810835ae61cbe18edc388c91664bfb6015571abadad3",
+    "originalMetadataPath": "audit/source-metadata/A08.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "A09",
+    "sourcePath": "MG1343-library/content/atak/A09-zabezpieczenie-ataku-3-plus-2.md",
+    "sourceSha256": "7e1483c4eb26e042b8e8cce0e0685aaca409688b02157de4b99f40a0b996b8da",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "0e09c03dd76162faccc92d0876cfac46b4010e8e672ed98fa60ffe40b1dd4dee",
+    "originalMetadataPath": "audit/source-metadata/A09.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "O01",
+    "sourcePath": "O01-organizacja-i-przesuwanie-bloku.md",
+    "sourceSha256": "38cca539ff7886bc2b9cd6666938bcfad6ff6990c6cc8f0b46409bd985a6231e",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "74a7a27b1d3b231a51d01d7645918146f9a9a141eac66617b8331bd3379a731c",
+    "originalMetadataPath": "audit/source-metadata/O01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O02",
+    "sourcePath": "O02-ochrona-centrum-i-przestrzeni-miedzy-liniami.md",
+    "sourceSha256": "f1cb80c26f51ec3e42db6b41435ed2582fad1e18c4470e6f60015e7eabd02758",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "1b453ec29d590aaa17b554ce1b40e8b79fed8548e08f8736d92519fc270af99a",
+    "originalMetadataPath": "audit/source-metadata/O02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O03",
+    "sourcePath": "O03-sygnaly-rozpoczecia-pressingu-zorganizowanego.md",
+    "sourceSha256": "a559dbe4ea1675e457e701e7c957f0e7cebac2e290f61816c37f8cb39f27cc1b",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "c797461394a511826295c5add89eeb9cc76e9d84917d8b48518eb17f0926aa2b",
+    "originalMetadataPath": "audit/source-metadata/O03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O04",
+    "sourcePath": "MG1343-library/content/bez-pilki/O04-klatka-lewa.md",
+    "sourceSha256": "5053ec33e4fb617b6b2b24528a47e689d39b23d382d8e17a9351a212ced5d4f1",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "354c3c45b05707d48cff032b8eb9cefd3cdcdfb74d43fedc458c2f6676f9f896",
+    "originalMetadataPath": "audit/source-metadata/O04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "O05",
+    "sourcePath": "O05-kontrola-glebokosci-i-pilek-za-obrone.md",
+    "sourceSha256": "4d43d3ca7f080d07e78f03df06abdc23eecbc5086fb14c880ddcd2b65a5a1ceb",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "74f25ce378adbc2ee719fd9cff22d934145688078522d675c830f9bf492d130e",
+    "originalMetadataPath": "audit/source-metadata/O05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O06",
+    "sourcePath": "O06-obrona-bocznego-sektora-i-dosrodkowania.md",
+    "sourceSha256": "8eed45d22427616d32b1b3da7331c427d7665f1980327147e8017c5fc62ee2a3",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "d45921283bdbfb3c25f2164b1e72f17fcc8399b009a85854810b0b8ffc96c55b",
+    "originalMetadataPath": "audit/source-metadata/O06.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O07",
+    "sourcePath": "O07-obrona-pola-karnego-wycofania-i-drugiej-pilki.md",
+    "sourceSha256": "9dcd9f851692fc541736df196cc24f1341393f93d1da8c64afded3fb568a5773",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "c549349f074261f112b91783a4124c686b1e5084a4387f891b3e0b513856f50f",
+    "originalMetadataPath": "audit/source-metadata/O07.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "O08",
+    "sourcePath": "O08-odbudowa-ustawienia-po-przelamaniu-presji.md",
+    "sourceSha256": "915952cb1521b78cd6a0d9b13f09bcc15e3fcb724ec1850698c5079c35b57e4f",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "5fa403d3bb33241c07ebc74622dea444892804e7a161fd30520c98a907f6ecfb",
+    "originalMetadataPath": "audit/source-metadata/O08.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "S01",
+    "sourcePath": "MG1343-library/content/po-stracie/S01-warunki-kontrpressingu.md",
+    "sourceSha256": "62947fd7974e3850ecda0fedb23349cbf14e76780862189972e9213345cf7206",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "a2db189faa0e0e12c059c3c18d02a53eb45c12e2e5e13ac8069e5b9eef0d355a",
+    "originalMetadataPath": "audit/source-metadata/S01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "S02",
+    "sourcePath": "MG1343-library/content/po-stracie/S02-pierwszy-doskok-i-opoznienie.md",
+    "sourceSha256": "45ceec39cc79f1a5a0fa28220cd1d01a3bb48bbfa952e5fb3fb58ebb6aa486ac",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "f1c5602ffb417805794b2fdb056eaf057c4a3d5c3fe5514a32d60f2d1d14897d",
+    "originalMetadataPath": "audit/source-metadata/S02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "S03",
+    "sourcePath": "MG1343-library/content/po-stracie/S03-zamkniecie-centrum-i-wyjsc.md",
+    "sourceSha256": "1e49be40776d58029ba12ebd60272e863bba9bf8480d293e046205941d84250e",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "545536f74ff551c2b0d8ae231999d87d8ce8c2898dde1d2c69cc40b0c0b7459c",
+    "originalMetadataPath": "audit/source-metadata/S03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "S04",
+    "sourcePath": "MG1343-library/content/po-stracie/S04-kontrola-glebokosci-po-stracie.md",
+    "sourceSha256": "196b3366184f21bf0fd30b1dbaf3a88a28f08c4605dd7616ce4797a8eb9be234",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "2d959a7a80727959e195b553e410187e773dd0be0d50776afa99bbd14d2603cb",
+    "originalMetadataPath": "audit/source-metadata/S04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "S05",
+    "sourcePath": "MG1343-library/content/po-stracie/S05-przerwanie-kontrpressingu-i-odbudowa.md",
+    "sourceSha256": "d190ed617b8629356aff2b59650f3724a8364f0e30f8b6361c51dc92d84950a1",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "38b913bbd78ba27191a0157864e9c4e87acbf920059e0bfb9108324a0981e592",
+    "originalMetadataPath": "audit/source-metadata/S05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "P01",
+    "sourcePath": "MG1343-library/content/po-odbiorze/P01-obserwacja-i-zabezpieczenie-po-odbiorze.md",
+    "sourceSha256": "25baa804aee8e0108501d02dfb3767b928ebd1f3ef6ba478bbc607594dcd0ec6",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "cc80aa184ab73cba672ebba0a93fefb7ba44afd319ec8bb1fd2124a248fe9ba2",
+    "originalMetadataPath": "audit/source-metadata/P01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "P02",
+    "sourcePath": "MG1343-library/content/po-odbiorze/P02-progresja-do-9-10-11-po-odbiorze.md",
+    "sourceSha256": "b7ccea62ec61da1971c469d553702f10dce387f7e9ee2a9378fa7ec64eb644ea",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "4295047ac82db389fefa07b1d4bd829315e934b436ea329cd55fabea30f12efd",
+    "originalMetadataPath": "audit/source-metadata/P02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "P03",
+    "sourcePath": "MG1343-library/content/po-odbiorze/P03-wsparcie-pierwszego-podania-i-ruchy-po-odbiorze.md",
+    "sourceSha256": "3a2bf18e6ad7103109b7a11590d22d1a9c12d5f9d07e38f8a9301c96dbce1314",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "c993adc29cfd84466d310e105c74a3c56140f977cffca3bacda55c2c46c02d52",
+    "originalMetadataPath": "audit/source-metadata/P03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "P04",
+    "sourcePath": "MG1343-library/content/po-odbiorze/P04-wykorzystanie-przewagi-w-kontrataku.md",
+    "sourceSha256": "dad94e0116302bf3b8434013dc237721f5fb0784c7ecfd668b91a2da3387ba82",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "bb8d15dd63c8049cb2b14cdebfe6201b4460ba3b4e178fbe5756e6b54df55321",
+    "originalMetadataPath": "audit/source-metadata/P04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "P05",
+    "sourcePath": "MG1343-library/content/po-odbiorze/P05-przejscie-do-kontrolowanego-posiadania.md",
+    "sourceSha256": "9c6cb064a390ff95554378382957a51034f41b944772e3261da90d8ab63b4cde",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "9760a1b0b4629a71542a51fda8291625affb973ec6efaa55e66a8f5daa949bd4",
+    "originalMetadataPath": "audit/source-metadata/P05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy"
+    ]
+  },
+  {
+    "code": "SP01",
+    "sourcePath": "MG1343-library/content/stale-fragmenty/SP01-krotki-rzut-rozny-i-tworzenie-2-na-1.md",
+    "sourceSha256": "cf2754b22aff0cf61ef223c67633f9b361b54d1211bb6b6cf249606f94553a78",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "a460b22633389ab48b557c9de189c2ae5dc24be73dc22085d0be3193a073a266",
+    "originalMetadataPath": "audit/source-metadata/SP01.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP02",
+    "sourcePath": "SP02-dalsze-rozwiazania-po-zablokowaniu-krotkiego-rozegrania.md",
+    "sourceSha256": "d0401138665ce0e78ef17f50dba5b07ce8dee3abdd79b80887c3c10685ca53c9",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "03e5e99af8b5b310bb6ae275e311e412911362b2ff8957a338b3e6998ebfcf37",
+    "originalMetadataPath": "audit/source-metadata/SP02.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP03",
+    "sourcePath": "SP03-rzuty-wolne-w-ataku-rozegranie-lub-bezposrednie-zagrozenie.md",
+    "sourceSha256": "e5e5c1a6a4e79fcfd583a23a9c0f8272ad616a8bd1fbe19d1e5aab86188938a7",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "7922dafe582b0e066d2266e2cef89ec48998eb9e7945d45dfc2ddf2315849ca6",
+    "originalMetadataPath": "audit/source-metadata/SP03.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP04",
+    "sourcePath": "SP04-auty-utrzymanie-progresja-i-uwolnienie-zawodnika.md",
+    "sourceSha256": "7c50418485a1a55df4cc7c506441823ee4c630ea144b5e4007f8359eabb02499",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "d56d9910774d75604f9dbef6239fd52beb85469019fc8df84c5ad9afc05871d1",
+    "originalMetadataPath": "audit/source-metadata/SP04.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP05",
+    "sourcePath": "SP05-mieszana-obrona-rzutow-roznych.md",
+    "sourceSha256": "dc251ef6cf8902bb01f948cf2319bfa7163f04bbcea41be3274c439c81493bbc",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "4887b5eb9d7aea06edf30b8249fd76e61c19918055c914d0b20f1af5c0e60093",
+    "originalMetadataPath": "audit/source-metadata/SP05.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP06",
+    "sourcePath": "SP06-obrona-rzutow-wolnych-i-autow.md",
+    "sourceSha256": "f72d49e02ffcfbb572ae8b77ecbb67bbf02d1cee2fb9700e1f00d7814e73e603",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "d9aeb4cb6f26c11bb285836ab88b4497414d7ba127ed079d04e1b44f2fdde6f3",
+    "originalMetadataPath": "audit/source-metadata/SP06.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP07",
+    "sourcePath": "SP07-druga-pilka-i-reakcja-po-zakonczeniu-sfg.md",
+    "sourceSha256": "b9d8ec91c7163b43f7112ec22e9874c31818296d2bb59b549546c479b0233dfe",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "40eae65b864e2caa8defd454bbb38ab42b107cb83abba8f861a18474861b0ef5",
+    "originalMetadataPath": "audit/source-metadata/SP07.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  },
+  {
+    "code": "SP08",
+    "sourcePath": "SP08-rzut-karny-role-i-reakcja-na-odbita-pilke.md",
+    "sourceSha256": "f5e963a6290fc2bca0138abd8d33cbbad34d247df9850a5c6644555c01432149",
+    "contentVersion": "1.0.0",
+    "packagedSha256": "da1fbf397137d3386c11de2db1d4cf41a4431934ad5e809b3545eef93a7fc314",
+    "originalMetadataPath": "audit/source-metadata/SP08.json",
+    "changes": [
+      "normalizacja metadanych i status pakietowy",
+      "usunięcie historycznej sekcji postępu"
+    ]
+  }
+]

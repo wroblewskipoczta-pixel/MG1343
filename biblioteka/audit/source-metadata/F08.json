@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "fundamenty.krycie-przekazywanie-i-kontrola-biegu-rywala",
+  "code": "F08",
+  "title": "Krycie, przekazywanie i kontrola biegu rywala",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "fundamenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "rozpoznanie-zagrozenia",
+      "label": "Rozpoznanie zagrożenia"
+    },
+    {
+      "id": "pozycja-i-kontrola-ruchu",
+      "label": "Pozycja i kontrola ruchu"
+    },
+    {
+      "id": "ciaglosc-odpowiedzialnosci",
+      "label": "Ciągłość odpowiedzialności"
+    },
+    {
+      "id": "aktualizacja-krycia",
+      "label": "Aktualizacja krycia"
+    }
+  ],
+  "actions": [
+    {
+      "id": "F08.D01",
+      "title": "Rozpoznaj rywala, piłkę i zagrożoną przestrzeń",
+      "principleIds": [
+        "rozpoznanie-zagrozenia"
+      ],
+      "visualId": "F08.G01",
+      "videoClips": []
+    },
+    {
+      "id": "F08.D02",
+      "title": "Dobierz pozycję i reaguj na ruch przeciwnika",
+      "principleIds": [
+        "pozycja-i-kontrola-ruchu"
+      ],
+      "visualId": "F08.G02",
+      "videoClips": []
+    },
+    {
+      "id": "F08.D03",
+      "title": "Przekaż lub utrzymaj odpowiedzialność za rywala",
+      "principleIds": [
+        "ciaglosc-odpowiedzialnosci"
+      ],
+      "visualId": "F08.G03",
+      "videoClips": []
+    },
+    {
+      "id": "F08.D04",
+      "title": "Aktualizuj krycie po podaniu i zmianie biegu",
+      "principleIds": [
+        "aktualizacja-krycia"
+      ],
+      "visualId": "F08.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F07",
+    "F09",
+    "O01",
+    "O02",
+    "O05",
+    "O06",
+    "O07",
+    "S04",
+    "P01"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "F09"
+}

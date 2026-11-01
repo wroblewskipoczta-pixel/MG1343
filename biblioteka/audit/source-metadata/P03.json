@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "po-odbiorze.wsparcie-pierwszego-podania-i-ruchy-po-odbiorze",
+  "code": "P03",
+  "title": "Wsparcie pierwszego podania i ruchy po odbiorze",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "po-odbiorze",
+  "exampleFormation": "1-3-4-3",
+  "baseRestDefence": "3+2",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "provenance": "editorial-reconstruction",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "principles": [
+    {
+      "id": "P03.principle.01",
+      "label": "Wyjdź poza cień przeciwnika"
+    },
+    {
+      "id": "P03.principle.02",
+      "label": "Rozdziel wsparcie, szerokość i głębokość"
+    },
+    {
+      "id": "P03.principle.03",
+      "label": "Wybierz następne zadanie po podaniu"
+    },
+    {
+      "id": "P03.principle.04",
+      "label": "Dopasuj ruch do zmiany przewagi"
+    }
+  ],
+  "actions": [
+    {
+      "id": "P03.D01",
+      "title": "Wyjdź poza cień przeciwnika",
+      "principleIds": [
+        "P03.principle.01"
+      ],
+      "visualId": "P03.G01",
+      "videoClips": []
+    },
+    {
+      "id": "P03.D02",
+      "title": "Rozdziel wsparcie, szerokość i głębokość",
+      "principleIds": [
+        "P03.principle.02"
+      ],
+      "visualId": "P03.G02",
+      "videoClips": []
+    },
+    {
+      "id": "P03.D03",
+      "title": "Wybierz następne zadanie po podaniu",
+      "principleIds": [
+        "P03.principle.03"
+      ],
+      "visualId": "P03.G03",
+      "videoClips": []
+    },
+    {
+      "id": "P03.D04",
+      "title": "Dopasuj ruch do zmiany przewagi",
+      "principleIds": [
+        "P03.principle.04"
+      ],
+      "visualId": "P03.G04",
+      "videoClips": []
+    }
+  ],
+  "automaticCompletion": false
+}

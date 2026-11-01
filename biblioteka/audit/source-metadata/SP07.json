@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "stale-fragmenty.druga-pilka-i-reakcja-po-zakonczeniu-sfg",
+  "code": "SP07",
+  "title": "Druga piłka i reakcja po zakończeniu SFG",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "stale-fragmenty",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "opponentAttackDirection": "top-to-bottom",
+  "principles": [
+    {
+      "id": "SP07.P01",
+      "label": "Oceń rzeczywisty tor i kontrolę piłki"
+    },
+    {
+      "id": "SP07.P02",
+      "label": "Połącz dostęp z pomocą i osłoną"
+    },
+    {
+      "id": "SP07.P03",
+      "label": "Dopasuj kontynuację do aktualnych możliwości"
+    },
+    {
+      "id": "SP07.P04",
+      "label": "Odtwórz funkcje przed nominalnymi pozycjami"
+    }
+  ],
+  "actions": [
+    {
+      "id": "SP07.D01",
+      "title": "Rozpoznaj wynik pierwszej akcji",
+      "principleIds": [
+        "SP07.P01"
+      ],
+      "visualId": "SP07.G01",
+      "videoClips": []
+    },
+    {
+      "id": "SP07.D02",
+      "title": "Przygotuj dostęp do drugiej piłki",
+      "principleIds": [
+        "SP07.P02"
+      ],
+      "visualId": "SP07.G02",
+      "videoClips": []
+    },
+    {
+      "id": "SP07.D03",
+      "title": "Wybierz kontynuację lub ochronę",
+      "principleIds": [
+        "SP07.P03"
+      ],
+      "visualId": "SP07.G03",
+      "videoClips": []
+    },
+    {
+      "id": "SP07.D04",
+      "title": "Odtwórz ustawienie po przejściu",
+      "principleIds": [
+        "SP07.P04"
+      ],
+      "visualId": "SP07.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F07",
+    "F08",
+    "F09",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "SP01",
+    "SP02",
+    "SP03",
+    "SP04",
+    "SP05",
+    "SP06",
+    "SP08"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "SP08",
+  "nextAuthoringLesson": "SP08"
+}

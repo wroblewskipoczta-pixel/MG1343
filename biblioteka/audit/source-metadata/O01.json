@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "lesson-content/1",
+  "id": "obrona.organizacja-i-przesuwanie-bloku",
+  "code": "O01",
+  "title": "Organizacja i przesuwanie bloku",
+  "version": "1.0.0",
+  "language": "pl",
+  "category": "obrona",
+  "audience": "olimpia-zespol",
+  "exampleFormation": "1-3-4-3",
+  "authoringComplete": true,
+  "reviewMode": "po-feedback-after-summary",
+  "individualActionApprovalsRequired": false,
+  "workflowStatus": "ready-for-content-review",
+  "publicationStatus": "unpublished",
+  "pitchOrientation": "vertical",
+  "ownGoal": "bottom",
+  "attackDirection": "bottom-to-top",
+  "opponentAttackDirection": "top-to-bottom",
+  "principles": [
+    {
+      "id": "O01.P01",
+      "label": "Oceń możliwości posiadacza"
+    },
+    {
+      "id": "O01.P02",
+      "label": "Połącz nacisk z osłoną"
+    },
+    {
+      "id": "O01.P03",
+      "label": "Przesuwaj relacje wraz z piłką"
+    },
+    {
+      "id": "O01.P04",
+      "label": "Odtwórz potrzebne funkcje po przełamaniu"
+    }
+  ],
+  "actions": [
+    {
+      "id": "O01.D01",
+      "title": "Rozpoznaj położenie piłki",
+      "principleIds": [
+        "O01.P01"
+      ],
+      "visualId": "O01.G01",
+      "videoClips": []
+    },
+    {
+      "id": "O01.D02",
+      "title": "Ustaw nacisk i ochronę centrum",
+      "principleIds": [
+        "O01.P02"
+      ],
+      "visualId": "O01.G02",
+      "videoClips": []
+    },
+    {
+      "id": "O01.D03",
+      "title": "Przesuń blok po podaniu",
+      "principleIds": [
+        "O01.P03"
+      ],
+      "visualId": "O01.G03",
+      "videoClips": []
+    },
+    {
+      "id": "O01.D04",
+      "title": "Odtwórz funkcje po przełamaniu",
+      "principleIds": [
+        "O01.P04"
+      ],
+      "visualId": "O01.G04",
+      "videoClips": []
+    }
+  ],
+  "roleLabels": [
+    "1",
+    "3",
+    "5",
+    "2",
+    "LWB",
+    "RWB",
+    "6",
+    "8",
+    "10",
+    "9",
+    "11"
+  ],
+  "relatedLessons": [
+    "F01",
+    "F02",
+    "F03",
+    "F07",
+    "F08",
+    "F09",
+    "O02",
+    "O03",
+    "O04",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "P01"
+  ],
+  "automaticCompletion": false,
+  "nextLesson": "O02"
+}
