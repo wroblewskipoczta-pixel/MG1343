@@ -1,0 +1,108 @@
+name: Przygotuj bibliotekę 44 lekcji
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publikacja-biblioteki
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rozpakuj, sprawdź i zbuduj strony
+        run: |
+          python3 - <<'PYTHON'
+          import pathlib,zipfile,hashlib,json,re,html,subprocess
+          root=pathlib.Path.cwd()
+          archive=root/'MG1343-44-lekcje-v1 (1).zip'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest()=='7e317f8268e4fd533130242e741552c298334d3f3b8f31b2bd789ace37e568ea','Nieprawidłowe archiwum'
+          out=root/'biblioteka';out.mkdir(exist_ok=True)
+          with zipfile.ZipFile(archive) as z:
+           for info in z.infolist():
+            parts=pathlib.PurePosixPath(info.filename).parts
+            assert parts[0]=='MG1343-44-lekcje-v1' and '..' not in parts
+            if info.is_dir():continue
+            p=out.joinpath(*parts[1:]);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(info))
+          subprocess.run(['python3',str(out/'tools/validate.py')],check=True)
+          manifest=json.loads((out/'lesson-manifest.json').read_text());lessons=manifest['lessons']
+          labels={'fundamenty':'Fundamenty','atak':'Z piłką','obrona':'Bez piłki','po-stracie':'Po stracie','po-odbiorze':'Po odbiorze','stale-fragmenty':'Stałe fragmenty'}
+          esc=lambda s:html.escape(str(s),quote=True)
+          def inline(s):
+           s=esc(s)
+           s=re.sub(r'`([^`]+)`',r'<code>\1</code>',s)
+           s=re.sub(r'\*\*([^*]+)\*\*',r'<strong>\1</strong>',s)
+           s=re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)',r'<em>\1</em>',s)
+           # Only explicit HTTP(S) links in authored content become clickable.
+           s=re.sub(r'\[([^\]]+)\]\((https?://[^\s)]+)\)',r'<a href="\2" rel="noopener">\1</a>',s)
+           return s
+          
+          def markdown(text):
+           lines=text.splitlines();result=[];i=0
+           while i<len(lines):
+            line=lines[i].strip()
+            if not line:i+=1;continue
+            if line.startswith('```'):
+             code=[];i+=1
+             while i<len(lines) and not lines[i].strip().startswith('```'):code.append(lines[i]);i+=1
+             result.append('<pre><code>'+esc('\n'.join(code))+'</code></pre>');i+=1;continue
+            if re.fullmatch(r'[-*_]{3,}',line):result.append('<hr>');i+=1;continue
+            h=re.match(r'^(#{1,6})\s+(.+)',line)
+            if h:
+             level=min(6,max(2,len(h[1])));result.append(f'<h{level}>{inline(h[2])}</h{level}>');i+=1;continue
+            if line.startswith('|') and i+1<len(lines) and re.fullmatch(r'[\s|:\-]+',lines[i+1]):
+             cells=lambda s:[c.strip() for c in s.strip().strip('|').split('|')]
+             result.append('<div class="table-wrap" role="region" aria-label="Tabela lekcji" tabindex="0"><table><thead><tr>'+''.join('<th>'+inline(c)+'</th>' for c in cells(line))+'</tr></thead><tbody>');i+=2
+             while i<len(lines) and lines[i].strip().startswith('|'):
+              result.append('<tr>'+''.join('<td>'+inline(c)+'</td>' for c in cells(lines[i]))+'</tr>');i+=1
+             result.append('</tbody></table></div>');continue
+            li=re.match(r'^(?:[-*]|\d+\.)\s+(.+)',line)
+            if li:
+             tag='ol' if re.match(r'^\d',line) else 'ul';result.append('<'+tag+'>')
+             while i<len(lines):
+              m=re.match(r'^\s*(?:[-*]|\d+\.)\s+(.+)',lines[i])
+              if not m:break
+              result.append('<li>'+inline(m[1])+'</li>');i+=1
+             result.append('</'+tag+'>');continue
+            result.append('<p>'+inline(line)+'</p>');i+=1
+           return '\n'.join(result)
+          css='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0d1614;color:#edf3ef;font:17px/1.65 system-ui,sans-serif}a{color:#9de6b4;text-underline-offset:4px}a:hover{color:white}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e9c86c;outline-offset:4px}.skip{position:absolute;left:1rem;top:-5rem}.skip:focus{top:1rem;background:#13271d;padding:1rem;z-index:10}.bar{border-bottom:1px solid #304238;background:#14221b;padding:1rem max(5vw,calc((100vw - 1180px)/2));display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800;letter-spacing:.08em;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:3rem 5vw}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.13;margin:.7rem 0 1.3rem;letter-spacing:-.035em}h2{line-height:1.3;margin-top:2.5rem}h3{line-height:1.4}.eyebrow{color:#b2d0bb;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}.intro{max-width:760px;color:#c1cfc6}.filters{display:flex;gap:1rem;flex-wrap:wrap;padding:1.4rem 0}.field{flex:1;min-width:230px}label{display:block;font-size:.85rem;margin-bottom:.4rem}input,select,button{font:inherit;border:1px solid #56725f;border-radius:8px;background:#192a20;color:#fff;padding:.7rem;width:100%}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1rem}.card{display:block;border:1px solid #334a3c;border-radius:12px;background:#16251c;padding:1.4rem;text-decoration:none;color:#edf3ef}.card:hover{background:#213b2a;border-color:#9de6b4}.card h2{font-size:1.14rem;margin:.7rem 0}.card small{color:#b5c6ba}.card[hidden]{display:none}.badge{font:700 .85rem/1 system-ui;color:#e9c86c}.count{color:#b5c6ba}.reading{max-width:900px}.reading article{border-top:1px solid #3a4b40;margin-top:2rem;padding-top:1rem}.reading p,.reading li{overflow-wrap:anywhere}.reading h2{color:#b8e3c5}li{padding:.2rem 0}.table-wrap{overflow-x:auto;margin:1.3rem 0}table{border-collapse:collapse;min-width:100%;font-size:.92rem}th,td{padding:.75rem;border:1px solid #3c5042;text-align:left;vertical-align:top;min-width:140px}th{background:#24392b}code{background:#24352a;padding:.15rem .3rem;border-radius:4px}pre{overflow:auto;background:#18261d;padding:1rem}pre code{background:none}.lesson-nav{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #425748;padding:1.5rem 0;margin-top:2rem}.note{padding:1rem;border-left:3px solid #d9c071;background:#203024}.actions{display:flex;gap:1.2rem;flex-wrap:wrap}footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #304238;color:#a9b8ae;font-size:.85rem}hr{border:0;border-top:1px solid #304238;margin:2rem 0}@media(max-width:550px){.wrap{padding:2rem 1rem}.bar{padding:1rem}.reading{font-size:16px}h1{font-size:2rem}}@media print{body{background:white;color:black}.bar,.filters,.lesson-nav,.actions,.skip,footer{display:none}a,.reading h2{color:black}.wrap{max-width:none;padding:0}.table-wrap{overflow:visible}th,td{border-color:#aaa}pre,code,.note{background:#eee;color:black}}'''
+          (out/'style.css').write_text(css)
+          def page(title,body,reading=False):
+           return '<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Model gry Olimpii — biblioteka 44 lekcji taktycznych."><title>'+esc(title)+' · MG1343</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Przejdź do treści</a><header class="bar"><a class="brand" href="index.html">OLIMPIA / MG1343</a><nav class="actions" aria-label="Nawigacja główna"><a href="index.html">44 lekcje</a><a href="../index.html">Animacja #KLATKA</a><a href="../studio.html">Warsztat trenera</a></nav></header><main id="main" class="wrap '+('reading' if reading else '')+'">'+body+'<footer>Rozumiej grę. Działaj razem. · Model gry Olimpii</footer></main></body></html>'
+          for i,l in enumerate(lessons):
+           text=(out/l['contentPath']).read_text()
+           # Technical metadata and historical editorial records stay in the downloadable source.
+           sections=re.split(r'(?m)(?=^## )',text);keep=[]
+           for s in sections:
+            heading=s.split('\n',1)[0].lower()
+            if any(term in heading for term in ['metadane','dane dla aplikacji','status wersji pakietowej','zapis przeglądu','kanban','zapis akceptacji','wskazówki realizacyjne dla aplikacji','uwagi do wdrożenia','wskazówki wdrożeniowe']):continue
+            keep.append(s)
+           text='\n'.join(keep);text=re.sub(r'(?m)^# [^\n]+\n','',text,count=1);text=re.sub(r'```json\s*\n.*?\n```','',text,flags=re.S)
+           body='<div class="eyebrow">'+esc(labels[l['category']])+' / '+l['code']+'</div><h1>'+esc(l['title'])+'</h1><div class="actions"><a href="index.html?dzial='+l['category']+'">← Dział: '+labels[l['category']]+'</a><a href="'+l['contentPath']+'" download>Pobierz pełną lekcję</a></div>'
+           if l['code']=='O04':body+='<p class="note"><a href="../index.html">Otwórz animację #KLATKA i wybierz swoją pozycję →</a></p>'
+           body+='<article>'+markdown(text)+'</article><nav class="lesson-nav" aria-label="Kolejność lekcji">'
+           if i:body+='<a href="'+lessons[i-1]['code']+'.html">← '+lessons[i-1]['code']+' · Poprzednia lekcja</a>'
+           if i+1<len(lessons):body+='<a href="'+lessons[i+1]['code']+'.html">'+lessons[i+1]['code']+' · Następna lekcja →</a>'
+           body+='</nav>'
+           meta=json.loads((out/l['metadataPath']).read_text());related=meta.get('relatedLessons',[])
+           if related:body+='<h2>Powiązane lekcje</h2><div class="actions">'+''.join('<a href="'+c+'.html">'+c+'</a>' for c in related)+'</div>'
+           (out/(l['code']+'.html')).write_text(page(l['title'],body,True))
+          body='<div class="eyebrow">Nasz model gry / Biblioteka</div><h1>Rozumiej sytuację.<br>Wybieraj działanie.</h1><p class="intro">44 lekcje, sześć działów i wspólny język na boisku. Wybierz temat, poznaj zadania i przygotuj się do rozmowy z trenerem.</p><div class="filters"><div class="field"><label for="search">Szukaj lekcji</label><input id="search" type="search" placeholder="Np. pressing, asekuracja, A09"></div><div class="field"><label for="category">Moment gry</label><select id="category"><option value="">Wszystkie działy</option>'+''.join('<option value="'+k+'">'+v+'</option>' for k,v in labels.items())+'</select></div></div><p id="count" class="count" role="status">44 lekcje</p><div class="grid">'
+          for l in lessons:
+           body+='<a class="card" href="'+l['code']+'.html" data-category="'+l['category']+'" data-search="'+esc(l['code']+' '+l['title']+' '+labels[l['category']])+'"><span class="badge">'+l['code']+'</span><h2>'+esc(l['title'])+'</h2><small>'+labels[l['category']]+' · '+('Scenariusz' if l['code']=='O04' else str(l['actionCount'])+' działania')+'</small></a>'
+          body+='</div><p id="empty" hidden>Brak lekcji dla tych kryteriów. Zmień hasło lub wybierz wszystkie działy.</p><noscript><p>Wyszukiwanie wymaga JavaScript. Wszystkie lekcje są dostępne na liście powyżej.</p></noscript><script src="catalog.js" defer></script>'
+          (out/'index.html').write_text(page('Biblioteka 44 lekcji',body))
+          (out/'catalog.js').write_text('''const search=document.getElementById('search'),category=document.getElementById('category'),cards=[...document.querySelectorAll('.card')];const normalize=s=>s.toLocaleLowerCase('pl').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/ł/g,'l');function filter(){const q=normalize(search.value.trim());let count=0;for(const card of cards){const show=(!category.value||card.dataset.category===category.value)&&normalize(card.dataset.search).includes(q);card.hidden=!show;if(show)count++;}document.getElementById('count').textContent=`Widoczne lekcje: ${count} z 44`;document.getElementById('empty').hidden=count!==0;}const initial=new URLSearchParams(location.search).get('dzial');if([...category.options].some(o=>o.value===initial))category.value=initial;search.addEventListener('input',filter);category.addEventListener('change',filter);filter();''')
+          print('Zbudowano 44 strony lekcji i katalog.')
+          PYTHON
+      - name: Zapisz bibliotekę w repozytorium
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add biblioteka
+          if ! git diff --cached --quiet; then
+            git commit -m "Udostępnij 44 lekcje w bibliotece aplikacji"
+            git push
+          fi
