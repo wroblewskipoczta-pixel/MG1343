@@ -72,6 +72,8 @@ jobs:
           def page(title,body,reading=False):
            return '<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Model gry Olimpii — biblioteka 44 lekcji taktycznych."><title>'+esc(title)+' · MG1343</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Przejdź do treści</a><header class="bar"><a class="brand" href="index.html">OLIMPIA / MG1343</a><nav class="actions" aria-label="Nawigacja główna"><a href="index.html">44 lekcje</a><a href="../studio.html">Warsztat trenera</a></nav></header><main id="main" class="wrap '+('reading' if reading else '')+'">'+body+'<footer>Rozumiej grę. Działaj razem. · Model gry Olimpii</footer></main></body></html>'
           for i,l in enumerate(lessons):
+           target=out/(l['code']+'.html')
+           if target.exists() and '<meta name="mg1343-visual" content="1">' in target.read_text():continue
            text=(out/l['contentPath']).read_text()
            # Technical metadata and historical editorial records stay in the downloadable source.
            sections=re.split(r'(?m)(?=^## )',text);keep=[]
